@@ -1,19 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import { Combo_400Regular } from '@expo-google-fonts/combo';
 
 export default function App() {
+  const [fontsLoaded, fontError] = useFonts({
+   Combo_400Regular
+  });
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <Image style={styles.img} source={require("./src/assets/vaidebet.png")}/>
 
+      <Text style={styles.login_txt}>LOGIN</Text>
+
       <View style={styles.viewEmail}>
       <Text>E-mail:</Text>
-      <TextInput  defaultValue='Digite seu e-mail' style={styles.email}></TextInput>
+      <TextInput  placeholder='Digite seu e-mail' style={styles.email}></TextInput>
       </View>
 
       <View style={styles.viewSenha}>
       <Text>Senha:</Text>
-      <TextInput defaultValue='Digite sua senha' style={styles.senha}></TextInput>
+      <TextInput placeholder='Digite sua senha' style={styles.senha}></TextInput>
       </View>
 
       <TouchableOpacity style={styles.btn}>
@@ -58,7 +70,7 @@ const styles = StyleSheet.create({
   btn:{
     marginTop:55,
     borderWidth:1,
-    borderCOlor: "black",
+    borderColor: "white",
     width: "40%",
     height: 35,
     paddingTop: 8,
@@ -77,6 +89,9 @@ const styles = StyleSheet.create({
     marginTop: 15,
     width: "100%",
     marginLeft: "30%"
+  },
+  login_txt:{
+    fontFamily: "Combo_400Regular"
   }
 
 });
