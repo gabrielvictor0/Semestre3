@@ -1,9 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Container } from './src/components/Container/Container';
+import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import { Container, ContainerBtn, ContainerPilulas } from './src/components/Container/Container';
+import { Button_Blue, Button_Red } from './src/components/Button/Button';
+import { TextButton, TextStyled, Title } from './src/components/Title/Title';
+import { useFonts, Poppins_500Medium } from '@expo-google-fonts/poppins';
+import { ImgMatrix } from './src/components/Image/Image';
+
 
 export default function App() {
+
+  const [] = useFonts({
+    Poppins_500Medium,
+  });
 
   const [count, setCount] = useState(0);
 
@@ -11,8 +20,8 @@ export default function App() {
     setCount(count + 1)
   }
 
-  const decrement = () =>{
-    setCount(count - 1 )
+  const decrement = () => {
+    setCount(count - 1)
   }
 
   useEffect(() => {
@@ -22,63 +31,30 @@ export default function App() {
   return (
     <Container>
 
-      <Text style={styles.matrix}>Escolha a pílula</Text>
+      <ImgMatrix source={require("./src/assets/img/Especial-Matrix-4.png")}>
 
-      <Text style={styles.contador}>CONTADOR: {count}</Text>
+      </ImgMatrix>
 
-      <View style={styles.container_btn}>
+      <ContainerPilulas>
 
-      <TouchableOpacity style={styles.btn_increment} onPress={increment}>
-        <Text style={styles.increment}>Incrementar</Text>
-      </TouchableOpacity>
+        <TextStyled>Escolha a pílula</TextStyled>
 
-      <TouchableOpacity style={styles.btn_decrement} onPress={decrement}>
-        <Text style={styles.decrement}>Decrementar</Text>
-      </TouchableOpacity>
+        <Title>CONTADOR: {count}</Title>
 
-      </View>
+        <ContainerBtn>
+
+          <Button_Red  onPress={decrement}>
+            <TextButton> -</TextButton>
+          </Button_Red>
+
+          <Button_Blue onPress={increment} >
+            <TextButton> + </TextButton>
+          </Button_Blue>
+
+        </ContainerBtn>
+      </ContainerPilulas>
 
       <StatusBar style="auto" />
     </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  
-  btn_decrement: {
-    width: "40%",
-    height: 40,
-    borderWidth: 1,
-    borderRadius: 15,
-    alignItems:"center",
-    justifyContent:"center",
-    backgroundColor: "#FF0000"
-  },
-  btn_increment: {
-    width: "40%",
-    height: 40,
-    borderWidth: 1,
-    borderRadius: 15,
-    alignItems:"center",
-    justifyContent:"center",
-    backgroundColor: "#0087FF"
-  },
-  container_btn: {
-    flexDirection: "row",
-    gap: 8
-  },
-  contador: {
-    fontSize: 30
-  },
-  increment: {
-    color: "white",
-    fontWeight: "bold"
-  },
-  decrement: {
-    color: "white",
-    fontWeight: "bold"
-  },
-  matrix: {
-    fontSize: 20
-  }
-});
