@@ -6,5 +6,12 @@ export const ScrollForm = styled.ScrollView`
 
 `
 export const ContainerForm = styled.SafeAreaView`
+    width: 80%;
+    align-self: center;
+
+`   
+export const ContainerUf = styled.View`
+ flex-direction: row;
+ justify-content: space-between;
 
 `
