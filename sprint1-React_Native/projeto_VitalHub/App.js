@@ -5,14 +5,19 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Login } from './src/components/screens/Login/Login';
 import {useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium} from "@expo-google-fonts/montserrat-alternates"
-
+import { Quicksand_500Medium, Quicksand_600SemiBold} from '@expo-google-fonts/quicksand';
+import { RecoverPassword } from './src/components/screens/RecoverPassword/RecoverPassword';
+import { EmailCode } from './src/components/screens/EmailCode/EmailCode';
+import { Register } from './src/components/screens/Register/Register';
+import { RedefinePassword } from './src/components/screens/RedefinePassword/RedefinePassword';
 //criar navegação entre telas
 const Stack = createNativeStackNavigator();
 
 export default function App() {
 
   const [] = useFonts({
-    MontserratAlternates_600SemiBold, MontserratAlternates_500Medium
+    MontserratAlternates_600SemiBold, MontserratAlternates_500Medium,
+    Quicksand_500Medium, Quicksand_600SemiBold
   })
 
   return (
@@ -43,6 +48,27 @@ export default function App() {
           name="Login"
           component={Login}
           options={{ title: "Navigation" }} />
+
+        <Stack.Screen
+          name='RecoverPassword'
+          component={RecoverPassword}
+          options={{title: "RecoverPassword"}}
+          />
+
+        <Stack.Screen
+          name='EmailCode'
+          component={EmailCode}
+          options={{title: "EmailCode"}} />
+
+        <Stack.Screen 
+          name='Register'
+          component={Register}
+          options={{title: "Register"}}/>
+
+          <Stack.Screen
+            name='RedefinePassword'
+            component={RedefinePassword}
+            options={{title: "RedefinePassword"}}/>
 
 
       </Stack.Navigator>

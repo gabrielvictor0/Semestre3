@@ -1,11 +1,13 @@
 import { Button, Text } from "react-native"
-import { Container, ContainerInputLogin } from "../../Container/Style"
+import { Container, ContainerGoogle, ContainerInputLogin, ContentAccount } from "../../Container/Style"
 import { Logo } from "../../Logo/Style"
-import { ButtonTitle, Title } from "../../Title/Style"
-import { Input } from "../../Input/Style"
+import { ButtonTitle, ButtonTitleGoogle, TextAccount, TextLink, Title } from "../../Title/Style"
+import { InputLogin } from "../../Input/Style"
 import { LinkMedium } from "../../Links/Style"
+import { ButtonEntrar, ButtonGoogle } from "../../Button/Style"
+import { Image } from "react-native"
 
-export const Login = () => {
+export const Login = ({navigation}) => {
 
 
     return (
@@ -16,25 +18,30 @@ export const Login = () => {
             <Title>Entrar ou criar conta</Title>
 
             <ContainerInputLogin>
-                <Input placeholder="Usuário ou e-mail" placeholfer />
-                <Input placeholder="Senha" />
+                <InputLogin placeholder="Usuário ou e-mail" />
+                <InputLogin placeholder="Senha" />
 
 
-                <LinkMedium>Esqueceu sua senha?</LinkMedium>
+                <LinkMedium onPress={() => navigation.navigate('RecoverPassword')}>Esqueceu sua senha?</LinkMedium>
             </ContainerInputLogin>
 
             
-            <Button>
-                <ButtonTitle> Entrar </ButtonTitle>
-            </Button>
-            {/*
+            <ButtonEntrar>
+                <ButtonTitle> ENTRAR </ButtonTitle>
+            </ButtonEntrar>
+            
             <ButtonGoogle>
-                <ButtonTitleGoogle></ButtonTitleGoogle>
-            </ButtonGoogle>
+                <ContainerGoogle>
 
+                <Image source={require("../../../assets/img/GOOGLE.png")}/>
+                <ButtonTitleGoogle>ENTRAR COM GOOGLE</ButtonTitleGoogle>
+
+                </ContainerGoogle>
+            </ButtonGoogle>
+           
             <ContentAccount>
-                <TextAccount></TextAccount>
-            </ContentAccount> */}
+                <TextAccount>Não tem conta? <TextLink onPress={() => navigation.navigate('Register')}>Crie uma conta agora!</TextLink> </TextAccount>
+            </ContentAccount>
 
         </Container>
     )
