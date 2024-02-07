@@ -15,7 +15,7 @@ export const ButtonGoogle = styled(ButtonEntrar)`
     align-items: center;
 `
 export const ButtonOut = styled.TouchableOpacity`
-     position: absolute;
+    position: absolute;
     margin-top: 85px;
     margin-left: 20px;
     align-self: flex-start;

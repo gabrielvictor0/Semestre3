@@ -34,3 +34,7 @@ export const ContainerCheckCode = styled.View`
     justify-content: space-between;
     width: 90%;
 `
+
+export const ContainerSubText = styled(ContainerTextRecoverPassword)`
+    width: 75%;
+`
