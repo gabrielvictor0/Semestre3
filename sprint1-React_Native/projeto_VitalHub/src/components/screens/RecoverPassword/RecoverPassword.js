@@ -1,4 +1,4 @@
-import { ButtonEntrar, ButtonOut} from "../../Button/Style"
+import { ButtonDefault, ButtonOut} from "../../Button/Style"
 import { Container, ContainerTextRecoverPassword } from "../../Container/Style"
 import { Input, InputRecoverPassword } from "../../Input/Style"
 import {  Logo } from "../../Logo/Style"
@@ -11,7 +11,6 @@ export const RecoverPassword = ({ navigation }) => {
 
         <Container>
             <ButtonOut onPress={() => navigation.navigate('Login')}>
-
                 <Image source={require("../../../assets/img/seta.png")}  />
             </ButtonOut>
 
@@ -28,9 +27,9 @@ export const RecoverPassword = ({ navigation }) => {
 
             <Input placeholder="Usuário ou e-mail" />
 
-            <ButtonEntrar onPress={() => navigation.navigate('EmailCode')}>
+            <ButtonDefault onPress={() => navigation.navigate('EmailCode')}>
                 <ButtonTitle>CONTINUAR</ButtonTitle>
-            </ButtonEntrar>
+            </ButtonDefault>
 
 
         </Container>

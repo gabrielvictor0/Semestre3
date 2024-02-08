@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const InputLogin = styled.TextInput.attrs({placeholderTextColor: '#49B3BA'})`
+export const InputDefault = styled.TextInput.attrs({placeholderTextColor: '#49B3BA'})`
     width: 100%;
     height: 53px;
     margin-top: 15px;
@@ -12,9 +12,16 @@ export const InputLogin = styled.TextInput.attrs({placeholderTextColor: '#49B3BA
     font-size: 16px;
     font-family: "MontserratAlternates_600SemiBold";
 `
-export const Input = styled(InputLogin)`
+export const Input = styled(InputDefault)`
     width: 90%;
 `
+export const InputProfile = styled(Input)`
+    border: none;
+    background-color: #F5F3F3;
+    font-size: 14px;
+    font-family: "Quicksand_500Medium";
+`
+
 export const CheckCode = styled.TextInput.attrs({placeholderTextColor: '#34898F'})`
     border: 2px solid #77CACF;
     width: 65px;

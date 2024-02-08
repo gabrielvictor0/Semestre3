@@ -1,4 +1,4 @@
-import { ButtonEntrar, ButtonOut } from "../../Button/Style"
+import { ButtonDefault, ButtonOut } from "../../Button/Style"
 import { Container, ContainerCheckCode } from "../../Container/Style"
 import { CheckCode } from "../../Input/Style"
 import { Logo } from "../../Logo/Style"
@@ -24,9 +24,9 @@ export const EmailCode = ({navigation}) => {
                 <CheckCode placeholder="0"/>
             </ContainerCheckCode>
 
-            <ButtonEntrar onPress={() => navigation.navigate('RedefinePassword')}>
+            <ButtonDefault onPress={() => navigation.navigate('RedefinePassword')}>
                 <ButtonTitle>ENTRAR</ButtonTitle>
-            </ButtonEntrar>
+            </ButtonDefault>
 
             <TextResendCode>Reenviar Código</TextResendCode>
 

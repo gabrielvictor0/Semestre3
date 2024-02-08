@@ -38,3 +38,8 @@ export const ContainerCheckCode = styled.View`
 export const ContainerSubText = styled(ContainerTextRecoverPassword)`
     width: 75%;
 `
+
+//profile
+export const ContainerSroll = styled.ScrollView`
+    
+`

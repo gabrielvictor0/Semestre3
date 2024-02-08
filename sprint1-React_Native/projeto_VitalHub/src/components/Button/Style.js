@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ButtonEntrar = styled.TouchableOpacity`
+export const ButtonDefault = styled.TouchableOpacity`
     width: 90%;
     height: 44px;
     border-radius: 5px;
@@ -8,7 +8,7 @@ export const ButtonEntrar = styled.TouchableOpacity`
     justify-content: center;
     margin-top: 30px;
 `
-export const ButtonGoogle = styled(ButtonEntrar)`
+export const ButtonGoogle = styled(ButtonDefault)`
     border: 1px solid #496BBA;
     background-color:#FAFAFA;
     margin-top: 15px;

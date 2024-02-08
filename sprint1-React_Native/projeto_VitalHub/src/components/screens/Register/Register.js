@@ -1,4 +1,4 @@
-import { ButtonEntrar } from "../../Button/Style"
+import { ButtonDefault } from "../../Button/Style"
 import { Container, ContainerSubText, ContainerTextRecoverPassword } from "../../Container/Style"
 import { Input } from "../../Input/Style"
 import { ButtonTitle, SubTextEmail, TextResendCode, Title } from "../../Title/Style"
@@ -16,9 +16,9 @@ export const Register = ({navigation}) => {
             <Input placeholder="Senha"/>
             <Input placeholder="Confimar Senha"/>
 
-            <ButtonEntrar>
+            <ButtonDefault>
                 <ButtonTitle>CADASTRAR</ButtonTitle>
-            </ButtonEntrar>
+            </ButtonDefault>
 
             <TextResendCode onPress={() => navigation.navigate('Login')}>Cancelar</TextResendCode>
         </Container>

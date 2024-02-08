@@ -1,8 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Navigation } from "./src/components/screens/Navigation/Navigation"
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { Login } from './src/components/screens/Login/Login';
 import {useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium} from "@expo-google-fonts/montserrat-alternates"
 import { Quicksand_500Medium, Quicksand_600SemiBold} from '@expo-google-fonts/quicksand';
@@ -10,6 +8,8 @@ import { RecoverPassword } from './src/components/screens/RecoverPassword/Recove
 import { EmailCode } from './src/components/screens/EmailCode/EmailCode';
 import { Register } from './src/components/screens/Register/Register';
 import { RedefinePassword } from './src/components/screens/RedefinePassword/RedefinePassword';
+import { Profile } from './src/components/screens/Profile/Profile';
+
 //criar navegação entre telas
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +31,12 @@ export default function App() {
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
+        <Stack.Screen
+          name='Profile'
+          component={Profile}
+          options={{title: "Profile"}}
+          />
+
         <Stack.Screen
           //nome da tela
           name='Navigation'

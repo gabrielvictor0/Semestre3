@@ -1,10 +1,10 @@
-import { Button, Text } from "react-native"
+
 import { Container, ContainerGoogle, ContainerInputLogin, ContentAccount } from "../../Container/Style"
 import { Logo } from "../../Logo/Style"
 import { ButtonTitle, ButtonTitleGoogle, TextAccount, TextLink, Title } from "../../Title/Style"
-import { InputLogin } from "../../Input/Style"
+import { InputDefault } from "../../Input/Style"
 import { LinkMedium } from "../../Links/Style"
-import { ButtonEntrar, ButtonGoogle } from "../../Button/Style"
+import { ButtonDefault, ButtonGoogle } from "../../Button/Style"
 import { Image } from "react-native"
 
 export const Login = ({ navigation }) => {
@@ -18,17 +18,17 @@ export const Login = ({ navigation }) => {
             <Title>Entrar ou criar conta</Title>
 
             <ContainerInputLogin>
-                <InputLogin placeholder="Usuário ou e-mail" />
-                <InputLogin placeholder="Senha" />
+                <InputDefault placeholder="Usuário ou e-mail" />
+                <InputDefault placeholder="Senha" />
 
 
                 <LinkMedium onPress={() => navigation.navigate('RecoverPassword')}>Esqueceu sua senha?</LinkMedium>
             </ContainerInputLogin>
 
 
-            <ButtonEntrar>
+            <ButtonDefault>
                 <ButtonTitle> ENTRAR </ButtonTitle>
-            </ButtonEntrar>
+            </ButtonDefault>
 
             <ButtonGoogle>
                 <ContainerGoogle>

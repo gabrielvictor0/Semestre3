@@ -1,4 +1,4 @@
-import { ButtonEntrar, ButtonOut } from "../../Button/Style"
+import { ButtonDefault, ButtonOut } from "../../Button/Style"
 import { Container } from "../../Container/Style"
 import { Input } from "../../Input/Style"
 import { Logo } from "../../Logo/Style"
@@ -19,9 +19,9 @@ export const RedefinePassword = ({navigation}) => {
             <Input placeholder="Nova senha"/>
             <Input placeholder="Confirmar nova senha"/>
 
-            <ButtonEntrar>
+            <ButtonDefault>
                 <ButtonTitle>Confirmar nova senha</ButtonTitle>
-            </ButtonEntrar>
+            </ButtonDefault>
 
         </Container>
     )
