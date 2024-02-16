@@ -1,12 +1,13 @@
-import { Label } from "../Label/Label";
-import { FieldContent } from "./Style";
-import { Input } from "../Input/Input";
+import { ContainerBoxInput } from "../Container/Style"
+import {InputProfile } from "../Input/Style"
+import {  TextLabel } from "../Label/Style"
 
-export function BoxInput({placeholder, fieldWidth, textLabel}){
+export const BoxInput = ({textLabel, placeholder, fieldWidth = 100}) => {
     return(
-        <FieldContent fieldWidth={fieldWidth}>
-            <Label textLabel={textLabel}/>
-            <Input placeholder={placeholder}/>
-        </FieldContent>
+
+        <ContainerBoxInput fieldWidth={fieldWidth}>
+            <TextLabel>{textLabel}</TextLabel>
+            <InputProfile placeholder={placeholder}/>
+        </ContainerBoxInput>
     )
 }

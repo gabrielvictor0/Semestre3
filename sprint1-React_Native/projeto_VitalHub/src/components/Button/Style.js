@@ -20,3 +20,6 @@ export const ButtonOut = styled.TouchableOpacity`
     margin-left: 20px;
     align-self: flex-start;
 `
+export const ButtonProfile = styled(ButtonDefault)`
+    width: 100%;
+`

@@ -48,3 +48,12 @@ export const TextResendCode = styled(TextLink)`
     margin-top: 30px;
     color: #344F8F;
 `
+export const SubTextProfile = styled(SubText)`
+    margin-bottom: 0px;
+    color: #4E4B59;
+    margin-top: 10px;
+`
+export const TitleHeader = styled(Title)`
+    color: #FBFBFB;
+    font-size: 16px;
+`

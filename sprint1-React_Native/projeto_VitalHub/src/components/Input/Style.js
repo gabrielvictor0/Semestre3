@@ -15,11 +15,13 @@ export const InputDefault = styled.TextInput.attrs({placeholderTextColor: '#49B3
 export const Input = styled(InputDefault)`
     width: 90%;
 `
-export const InputProfile = styled(Input)`
+export const InputProfile = styled(Input).attrs({placeholderTextColor: "#33303E"})`
     border: none;
     background-color: #F5F3F3;
     font-size: 14px;
-    font-family: "Quicksand_500Medium";
+    font-family: "MontserratAlternates_500Medium";
+    width: 100%;
+    
 `
 
 export const CheckCode = styled.TextInput.attrs({placeholderTextColor: '#34898F'})`

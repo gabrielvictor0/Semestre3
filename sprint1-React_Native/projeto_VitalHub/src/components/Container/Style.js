@@ -41,5 +41,28 @@ export const ContainerSubText = styled(ContainerTextRecoverPassword)`
 
 //profile
 export const ContainerSroll = styled.ScrollView`
-    
+   
+   width: 100%;
+`
+export const ContainerBoxInput = styled(ContainerInputLogin)`
+ width: ${props => `${props.fieldWidth}%`};
+ margin-top: 24px;
+`
+export const ContainerInputSmall = styled.View`
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+`
+export const ContainerFormProfile = styled.View`
+    width: 90%;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 41px;
+`
+export const ContainerHeader = styled.View`
+    width: 90%;
+    flex-direction: row;
 `
