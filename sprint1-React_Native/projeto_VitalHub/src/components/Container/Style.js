@@ -65,4 +65,19 @@ export const ContainerFormProfile = styled.View`
 export const ContainerHeader = styled.View`
     width: 90%;
     flex-direction: row;
+    margin-bottom: 18px;
+`
+export const ContainerHeaderText = styled.View`
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 10px;
+`
+export const ContainerButtonHome = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    height: auto;
+    align-items: center;
 `

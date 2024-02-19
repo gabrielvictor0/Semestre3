@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const Title = styled.Text`
     font-size: 20px;
@@ -56,4 +56,19 @@ export const SubTextProfile = styled(SubText)`
 export const TitleHeader = styled(Title)`
     color: #FBFBFB;
     font-size: 16px;
+`
+export const SubTextHeader = styled(SubText)`
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #4E4B59;
+`
+export const ButtonTitleHome = styled(ButtonTitle)`
+        font-size:12px ;
+        
+    ${props => props.clickButton ? css`
+        color: #fbfbfb;
+    `: css`
+        color: #607EC5;
+    `}
 `

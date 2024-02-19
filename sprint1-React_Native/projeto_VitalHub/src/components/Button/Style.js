@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const ButtonDefault = styled.TouchableOpacity`
     width: 90%;
@@ -22,4 +22,18 @@ export const ButtonOut = styled.TouchableOpacity`
 `
 export const ButtonProfile = styled(ButtonDefault)`
     width: 100%;
+`
+
+export const ButtonDefaultHome = styled(ButtonDefault)`
+    width: 31%;
+    height: 39px;
+    margin-top: 0px;
+    ${props => props.clickButton ? css`
+        background-color: #496bba;
+        height: 35px;
+        `
+        : css`
+            background-color: transparent;
+            border: 2px solid #607EC5;
+        `}
 `
