@@ -3,6 +3,7 @@ import { ContainerHearderGradient } from '../../components/Header/Style'
 import { SubTextHeader, TitleHeader } from '../Title/Style'
 import { ContainerSafeArea } from "../../components/Header/Style"
 import { ContainerHeader, ContainerHeaderText } from '../Container/Style'
+import {Icon} from "@expo/vector-icons"
 
 export const HeaderDefault = ({ textName, source, subText }) => {
     return (
@@ -15,9 +16,6 @@ export const HeaderDefault = ({ textName, source, subText }) => {
                         <SubTextHeader>{subText}</SubTextHeader>
                         <TitleHeader>{textName}</TitleHeader>
                     </ContainerHeaderText>
-                    <Image
-                    style={{position: 'relative', left: 146, top: 18}}
-                    source={require("../../assets/img/ion_notifcations.png")} />
                 </ContainerHeader>
             </ContainerHearderGradient>
         </ContainerSafeArea>

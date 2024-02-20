@@ -8,8 +8,8 @@ export const Navigation = ({navigation}) => {
                 onPress={() => navigation.navigate('Login')}
             />
             <Button
-                title="HomeDoctor"
-                onPress={() => navigation.navigate('HomeDoctor')}
+                title="Home"
+                onPress={() => navigation.navigate('Home')}
             />
             <Button
                 title="Profile"
