@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const ContainerCard = styled.View` 
-    width: 90%;
+    width: 100%;
+    border: 1px solid black;
 `
 export const BoxCard = styled.View`
     border-radius: 5px;
@@ -11,6 +12,7 @@ export const BoxCard = styled.View`
     flex-direction: row;
     align-self: center;
     margin-top: 12px;
+    border: 1px solid black;
 `
 export const TextName = styled.Text`
     font-size: 16px;
@@ -55,7 +57,7 @@ export const BoxCardInformation = styled.View`
 
 export const BoxCardText = styled.View`
     flex-direction: row;
-    width: 88%;
+    width: min-content;
     align-self: center;
     justify-content: space-between;
    

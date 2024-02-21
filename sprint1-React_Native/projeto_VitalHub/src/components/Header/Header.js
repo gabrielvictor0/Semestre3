@@ -3,7 +3,7 @@ import { ContainerHearderGradient } from '../../components/Header/Style'
 import { SubTextHeader, TitleHeader } from '../Title/Style'
 import { ContainerSafeArea } from "../../components/Header/Style"
 import { ContainerHeader, ContainerHeaderText } from '../Container/Style'
-import {Icon} from "@expo/vector-icons"
+import {FontAwesome} from "@expo/vector-icons"
 
 export const HeaderDefault = ({ textName, source, subText }) => {
     return (

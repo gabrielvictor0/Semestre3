@@ -82,7 +82,3 @@ export const ContainerButtonHome = styled.View`
     align-items: center;
     margin-bottom: 8px;
 `
-export const ContainerCardHome = styled.View`
-    width: 90%;
-    align-items: center;
-`

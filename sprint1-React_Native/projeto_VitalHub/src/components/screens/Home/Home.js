@@ -6,25 +6,41 @@ import { HeaderDefault } from "../../Header/Header";
 import { Cards } from "../../Cards/Cards";
 import { FlatList } from "react-native";
 
-// const Lista = [
-//     {
-//         id: "1",
-//         nome: "Nicole Sarga",
-//         idade: "22",
-//         horarioConsulta: "14:00",
-//         tipoConsulta: "Rotina"
-//     },
-//     {
-//         id: "2",
-//         nome: "Richard Kosta",
-//         idade: "28",
-//         horarioConsulta: "15:00",
-//         tipoConsulta: "Urgencia"
-//     }
-// ]
+import image from "../../../assets/img/img_person.jpg"
+
+const lista = [
+    {
+        id: "1",
+        nome: "Nicole Sarga",
+        idade: "22",
+        horarioConsulta: "14:00",
+        tipoConsulta: "Rotina",
+        image: image,
+        status: "pendentes"
+    },
+    {
+        id: "2",
+        nome: "Richard Kosta",
+        idade: "28",
+        horarioConsulta: "15:00",
+        tipoConsulta: "Urgencia",
+        image: image,
+        status: "realizadas"
+    },
+    {
+        id: "3",
+        nome: "Gabriel Victor",
+        idade: "28",
+        horarioConsulta: "15:00",
+        tipoConsulta: "Urgencia",
+        image: image,
+        status: "canceladas"
+    }
+]
+
 
 export const Home = ({ }) => {
-    const [statusList, setStatusList] = useState("")
+    const [statusList, setStatusList] = useState("pendentes")
     return (
         <Container>
             <HeaderDefault
@@ -48,25 +64,26 @@ export const Home = ({ }) => {
                     textButton={"Realizadas"}
                 />
 
-
-
                 <ButtonHome
                     clickButton={statusList === "canceladas"}
                     onPress={() => setStatusList("canceladas")}
                     textButton={"Canceladas"}
                 />
             </ContainerButtonHome>
-
-            <ContainerCardHome>
-                <Cards
-                    Name={"Gabriel Victor"}
-                    Age={"17"}
-                    Time={"14:00"}
-                    Type={"Rotina"}
-                    SourceImage={require("../../../assets/img/img_person.jpg")}
-                />
-            </ContainerCardHome>
-
+            <FlatList
+                data={lista}
+                renderItem={({ item }) =>
+                    <Cards
+                        Name={item.nome}
+                        Age={item.idade}
+                        Time={item.horarioConsulta}
+                        Type={item.tipoConsulta}
+                        SourceImage={item.image}
+                        Status={item.status}
+                    />
+                }
+                showsVerticalScrollIndicator={false}
+            />
         </Container>
     )
 }
