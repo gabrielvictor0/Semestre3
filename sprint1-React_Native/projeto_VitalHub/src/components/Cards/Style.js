@@ -12,7 +12,6 @@ export const BoxCard = styled.View`
     flex-direction: row;
     align-self: center;
     margin-top: 12px;
-    border: 1px solid black;
 `
 export const TextName = styled.Text`
     font-size: 16px;
@@ -38,14 +37,14 @@ export const TextType = styled.Text`
 `
 
 export const TextCancel = styled.Text`
-    color: #C81D25;
+    color: ${(props) => props.Status == "pendentes" ? "#c81d25" : "#344f8f"} ; 
     font-size: 12px;
     font-family: "MontserratAlternates_500Medium";
 `
-export const ButtonCancel = styled.TouchableOpacity`
+export const ButtonCard = styled.TouchableOpacity`
     align-self: flex-end;
-    margin-left: 47px;
-    margin-bottom:15px ;
+    margin-left: ${(props) => props.Status == "realizadas" ? "20px" : "47px"};
+    margin-bottom:15px;
 `
 export const BoxCardInformation = styled.View`
     justify-content: space-between;

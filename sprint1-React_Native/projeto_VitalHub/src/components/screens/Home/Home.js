@@ -7,6 +7,7 @@ import { Cards } from "../../Cards/Cards";
 import { FlatList } from "react-native";
 
 import image from "../../../assets/img/img_person.jpg"
+import { CancellationModal } from "../../CancellationModal/CancellationModal";
 
 const lista = [
     {
@@ -41,6 +42,8 @@ const lista = [
 
 export const Home = ({ }) => {
     const [statusList, setStatusList] = useState("pendentes")
+    const [showModalCancel, setShowModalCancel] = useState(false)
+    const [showModalAppointment, setShowModalAppointment] = useState(false)
     return (
         <Container>
             <HeaderDefault
@@ -73,16 +76,25 @@ export const Home = ({ }) => {
             <FlatList
                 data={lista}
                 renderItem={({ item }) =>
-                    <Cards
-                        Name={item.nome}
-                        Age={item.idade}
-                        Time={item.horarioConsulta}
-                        Type={item.tipoConsulta}
-                        SourceImage={item.image}
-                        Status={item.status}
-                    />
+                    statusList == item.status &&(
+
+                        <Cards
+                            Name={item.nome}
+                            Age={item.idade}
+                            Time={item.horarioConsulta}
+                            Type={item.tipoConsulta}
+                            SourceImage={item.image}
+                            Status={item.status}
+                            onPressCancel={() => {setShowModalCancel(true)}}
+                            onPressAppointment={() => {setShowModalAppointment(true)}}
+                        />
+                    )
                 }
                 showsVerticalScrollIndicator={false}
+            />
+            <CancellationModal
+            visible={showModalCancel}
+            setShowModalCancel={setShowModalAppointment}
             />
         </Container>
     )

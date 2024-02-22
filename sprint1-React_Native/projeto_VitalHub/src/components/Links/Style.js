@@ -8,3 +8,8 @@ export const LinkMedium = styled.Text`
     align-self: flex-start;
     text-decoration: underline;
 `
+export const LinkModal = styled(LinkMedium)`
+    font-family: "MontserratAlternates_600SemiBold";
+    align-self: center;
+    color: #344F8F;
+`

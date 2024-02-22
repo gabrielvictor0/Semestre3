@@ -1,8 +1,8 @@
 import { Image } from "react-native"
-import { BoxCard, BoxCardInformation, BoxCardText, BoxCardTime, BoxTime, ButtonCancel, ContainerCard, ContainerInformation, ImageCard, TextAge, TextCancel, TextName, TextTime, TextType } from "./Style"
+import { BoxCard, BoxCardInformation, BoxCardText, BoxCardTime, BoxTime, ButtonCancel, ButtonCard, ContainerCard, ContainerInformation, ImageCard, TextAge, TextCancel, TextName, TextTime, TextType } from "./Style"
 import { useState } from "react"
 
-export const Cards = ({ SourceImage, Name, Age, Type, Time, Status}) => {
+export const Cards = ({ SourceImage, Name, Age, Type, Time, Status, onPressCancel, onPressAppointment }) => {
 
     return (
         <BoxCard Status={Status}>
@@ -23,10 +23,21 @@ export const Cards = ({ SourceImage, Name, Age, Type, Time, Status}) => {
                 </BoxCardTime>
 
             </BoxCardInformation>
+            {
+                Status == "canceladas" ? (
+                    <>
+                    </>
+                ) : Status == "pendentes" ? (
+                    <ButtonCard onPress={onPressCancel}>
+                        <TextCancel Status={Status}>Cancelar</TextCancel>
+                    </ButtonCard>
+                ) : (
+                    <ButtonCard onPress={onPressAppointment} Status={Status}>
+                        <TextCancel Status={Status}>Ver Prontuário</TextCancel>
+                    </ButtonCard>
+                )
+            }
 
-            <ButtonCancel>
-                <TextCancel>Cancelar</TextCancel>
-            </ButtonCancel>
         </BoxCard>
 
     )
