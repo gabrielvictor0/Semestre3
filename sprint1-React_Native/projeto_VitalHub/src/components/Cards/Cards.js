@@ -1,5 +1,5 @@
 import { Image } from "react-native"
-import { BoxCard, BoxCardInformation, BoxCardText, BoxCardTime, BoxTime, ButtonCancel, ButtonCard, ContainerCard, ContainerInformation, ImageCard, TextAge, TextCancel, TextName, TextTime, TextType } from "./Style"
+import { BoxCard, BoxCardInformation, BoxCardText, BoxCardTime, BoxTime, ButtonCard, ImageCard, TextAge, TextCancel, TextName, TextTime, TextType } from "./Style"
 import { useState } from "react"
 
 export const Cards = ({ SourceImage, Name, Age, Type, Time, Status, onPressCancel, onPressAppointment }) => {
@@ -32,7 +32,7 @@ export const Cards = ({ SourceImage, Name, Age, Type, Time, Status, onPressCance
                         <TextCancel Status={Status}>Cancelar</TextCancel>
                     </ButtonCard>
                 ) : (
-                    <ButtonCard onPress={onPressAppointment} Status={Status}>
+                    <ButtonCard onPress={onPressAppointment} >
                         <TextCancel Status={Status}>Ver Prontuário</TextCancel>
                     </ButtonCard>
                 )

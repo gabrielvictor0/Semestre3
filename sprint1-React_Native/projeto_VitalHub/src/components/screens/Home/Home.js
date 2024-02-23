@@ -8,6 +8,7 @@ import { FlatList } from "react-native";
 
 import image from "../../../assets/img/img_person.jpg"
 import { CancellationModal } from "../../CancellationModal/CancellationModal";
+import { AppointmentModal } from "../../AppointmentModal/AppointmentModal";
 
 const lista = [
     {
@@ -44,6 +45,7 @@ export const Home = ({ }) => {
     const [statusList, setStatusList] = useState("pendentes")
     const [showModalCancel, setShowModalCancel] = useState(false)
     const [showModalAppointment, setShowModalAppointment] = useState(false)
+
     return (
         <Container>
             <HeaderDefault
@@ -92,10 +94,16 @@ export const Home = ({ }) => {
                 }
                 showsVerticalScrollIndicator={false}
             />
+            
             <CancellationModal
             visible={showModalCancel}
-            setShowModalCancel={setShowModalAppointment}
+            setShowModalCancel={setShowModalCancel}
             />
+
+            <AppointmentModal
+            visible={showModalAppointment}
+            setShowModalAppointment={setShowModalAppointment}/>
+            
         </Container>
     )
 }
