@@ -18,11 +18,13 @@ export const Profile = () => {
 
                     <BoxInput
                         textLabel={"Data de nascimento: "}
-                        placeholder={"dd/mm/aaaa"} />
+                        placeholder={"dd/mm/aaaa"}
+                        keyType={"numeric"} />
 
                     <BoxInput
                         textLabel={"CPF: "}
-                        placeholder={"xxx.xxx.xxx-xx"} />
+                        placeholder={"xxx.xxx.xxx-xx"}
+                        keyType="numeric" />
 
                     <BoxInput
                         textLabel={"Endereço: "}
@@ -33,7 +35,8 @@ export const Profile = () => {
                         <BoxInput
                             textLabel={"Cep: "}
                             placeholder={"Cep.."}
-                            fieldWidth={46} />
+                            fieldWidth={46}
+                            keyType="numeric" />
 
                         <BoxInput
                             textLabel={"Cidade: "}

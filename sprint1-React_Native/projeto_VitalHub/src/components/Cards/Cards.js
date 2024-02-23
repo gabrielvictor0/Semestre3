@@ -1,7 +1,6 @@
 import { Image } from "react-native"
 import { BoxCard, BoxCardInformation, BoxCardText, BoxCardTime, BoxTime, ButtonCard, ImageCard, TextAge, TextCancel, TextName, TextTime, TextType } from "./Style"
-import { useState } from "react"
-
+import { AntDesign } from "@expo/vector-icons"
 export const Cards = ({ SourceImage, Name, Age, Type, Time, Status, onPressCancel, onPressAppointment }) => {
 
     return (
@@ -15,10 +14,14 @@ export const Cards = ({ SourceImage, Name, Age, Type, Time, Status, onPressCance
                     <TextType>{Type}</TextType>
                 </BoxCardText>
 
-                <BoxCardTime>
+                <BoxCardTime Status={Status}>
                     <BoxTime>
-                        <Image style={{ alignSelf: "center" }} source={require("../../assets/img/img_time.png")} />
-                        <TextTime>{Time}</TextTime>
+                        <AntDesign
+                            name="clockcircle"
+                            size={14}
+                            color={Status == "pendentes" ? "#49B3BA" : "#8C8A97"}
+                        />
+                        <TextTime Status={Status}>{Time}</TextTime>
                     </BoxTime>
                 </BoxCardTime>
 
@@ -28,11 +31,11 @@ export const Cards = ({ SourceImage, Name, Age, Type, Time, Status, onPressCance
                     <>
                     </>
                 ) : Status == "pendentes" ? (
-                    <ButtonCard onPress={onPressCancel}>
+                    <ButtonCard onPress={onPressCancel} Status={Status}>
                         <TextCancel Status={Status}>Cancelar</TextCancel>
                     </ButtonCard>
                 ) : (
-                    <ButtonCard onPress={onPressAppointment} >
+                    <ButtonCard onPress={onPressAppointment} Status={Status}>
                         <TextCancel Status={Status}>Ver Prontuário</TextCancel>
                     </ButtonCard>
                 )

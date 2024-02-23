@@ -3,7 +3,7 @@ import { ContainerHearderGradient } from '../../components/Header/Style'
 import { SubTextHeader, TitleHeader } from '../Title/Style'
 import { ContainerSafeArea } from "../../components/Header/Style"
 import { ContainerHeader, ContainerHeaderText } from '../Container/Style'
-import {FontAwesome} from "@expo/vector-icons"
+import {MaterialIcons} from "@expo/vector-icons"
 
 export const HeaderDefault = ({ textName, source, subText }) => {
     return (
@@ -16,6 +16,7 @@ export const HeaderDefault = ({ textName, source, subText }) => {
                         <SubTextHeader>{subText}</SubTextHeader>
                         <TitleHeader>{textName}</TitleHeader>
                     </ContainerHeaderText>
+                <MaterialIcons style={{marginLeft: 145, marginTop: 17}} name='notifications' size={25} color="#fbfbfb"/>
                 </ContainerHeader>
             </ContainerHearderGradient>
         </ContainerSafeArea>

@@ -25,10 +25,10 @@ export const TextAge = styled.Text`
     color: #8C8A97;
 `
 export const TextTime = styled.Text`
-    color: #49B3BA;
+    color: ${props => props.Status == "pendentes" ? "#49B3BA" : "#4E4B59"};
     font-family: "Quicksand_600SemiBold";
     font-size: 14px;
-    align-self:center;
+    
 `
 export const TextType = styled.Text`
     color: #4E4B59;
@@ -72,7 +72,7 @@ export const BoxCardTime = styled.View`
     width: 100px;
     height: 26px;
     border-radius: 5px;
-    background-color: #E8FCFD;
+    background-color: ${props => props.Status == "pendentes" ? "#E8FCFD" : "#F1F0F5"};
     align-self: center;
     justify-content: center;
     align-items: center;
@@ -82,4 +82,5 @@ export const BoxTime = styled.View`
     width: 50%;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 `

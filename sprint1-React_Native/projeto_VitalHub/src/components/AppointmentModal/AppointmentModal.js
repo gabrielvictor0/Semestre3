@@ -1,23 +1,32 @@
 import { Modal } from "react-native"
-import { ButtonAppointmentCancel, ContainerAppointment, ImageAppointment, TextAgeAppointment, TextButtonAppointment, TextEmailAppointment, TitleAppointment } from "./Style"
+import { BoxTextAppointment, ButtonCancelAppointment, ContainerAppointment, ImageAppointment, NameAppointment, TextAppointment, TextBtnCancelAppointment, ViewModalAppointment } from "./Style"
 import { ButtonDefault } from "../Button/Style"
 import { ButtonTitle } from "../Title/Style"
 
-export const AppointmentModal = ({ visible, setShowModalAppointment, ...rest }) => {
-    return (
-        <Modal {...rest} visible={visible} transparent={true} animationType="fade">
-            <ContainerAppointment>
-                <ImageAppointment />
-                <TitleAppointment>Nicole Sarga</TitleAppointment>
-                <TextAgeAppointment>22 anos</TextAgeAppointment>
-                <TextEmailAppointment>niccole.sarga@gmail.com</TextEmailAppointment>
-                <ButtonDefault>
-                    <ButtonTitle>INSERIR PRONTUÁRIO</ButtonTitle>
-                </ButtonDefault>
-                <ButtonAppointmentCancel onPress={() => setShowModalAppointment(false)}>
-                    <TextButtonAppointment>Cancelar</TextButtonAppointment>
-                </ButtonAppointmentCancel>
-            </ContainerAppointment>
+export const AppointmentModal = ({visible, setShowModalAppointment, ...rest}) => {
+    return(
+        <Modal visible={visible} transparent={true} animationType="fade">
+            <ViewModalAppointment>
+                <ContainerAppointment>
+                    <ImageAppointment source={require("../../assets/img/epico.jpg")}/>
+
+                    <NameAppointment>Niccole Sarga</NameAppointment>
+
+                    <BoxTextAppointment>
+                        <TextAppointment>22 anos</TextAppointment>
+                        <TextAppointment>niccole.sarga@gmail.com</TextAppointment>
+                    </BoxTextAppointment>
+
+                    <ButtonDefault>
+                        <ButtonTitle>INSERIR PROTUÁRIO</ButtonTitle>
+                    </ButtonDefault>
+
+                    <ButtonCancelAppointment onPress={() => setShowModalAppointment(false)}>
+                        <TextBtnCancelAppointment>Cancelar</TextBtnCancelAppointment>
+                    </ButtonCancelAppointment>
+
+                </ContainerAppointment>
+            </ViewModalAppointment>
         </Modal>
     )
-}  
+}

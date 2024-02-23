@@ -1,9 +1,15 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 
+export const ViewModalAppointment = styled.View`
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+`
 export const ContainerAppointment = styled.View`
     width: 334px;
     height: 436px;
-    color: white;
+    background-color: white;
     border-radius: 10px;
     align-items: center;
 `
@@ -11,29 +17,33 @@ export const ImageAppointment = styled.Image`
     width: 285px;
     height: 181px;
     border-radius: 10px;
-    margin: 30px 24px 20px 24px;
-
+    margin-top: 30px;
+    margin-bottom: 20px;
 `
-export const TitleAppointment = styled.Title`
+export const NameAppointment = styled.Text`
     font-size: 20px;
-    font-family: "MontserratAlternates_600SemiBold";
     color: #33303E;
+    font-family: "MontserratAlternates_600SemiBold";
+    margin-bottom: 17px;
 `
-export const TextAgeAppointment = styled.Text`
+export const TextAppointment = styled.Text`
     font-size: 14px;
     font-family: "Quicksand_500Medium";
-    color: #5F5C6B;
-    margin: 0px 20px 0px 47px ;
+    color: #4E4B59;
 `
-export const TextEmailAppointment = styled(TextAgeAppointment)`
-    margin: 0px 47px 0px 0px ;
+export const BoxTextAppointment = styled.View`
+    width: 211px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 `
-export const ButtonAppointmentCancel = styled.TouchableOpacity`
-margin-top: 1px;
+export const ButtonCancelAppointment = styled.TouchableOpacity`
+    margin-top: 30px;
 `
-export const TextButtonAppointment = styled.Text`
-    font-family: "MontserratAlternates_600SemiBold";
+export const TextBtnCancelAppointment = styled.Text`
     text-decoration: underline;
-    color: #344F8F;
     font-size: 14px;
+    font-family: "MontserratAlternates_600SemiBold";
+    color: #344F8F;
+    align-self: center;
 `
