@@ -16,6 +16,10 @@ export const Navigation = ({navigation}) => {
                 onPress={() => navigation.navigate('Profile')}
             />
 
+            <Button
+                title="MedicalRecord"
+                onPress={() => navigation.navigate('MedicalRecord')}/>
+
         </View>
     )
 }

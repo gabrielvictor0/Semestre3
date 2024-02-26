@@ -3,7 +3,7 @@ import { BoxTextAppointment, ButtonCancelAppointment, ContainerAppointment, Imag
 import { ButtonDefault } from "../Button/Style"
 import { ButtonTitle } from "../Title/Style"
 
-export const AppointmentModal = ({visible, setShowModalAppointment, ...rest}) => {
+export const AppointmentModal = ({navigation, visible, setShowModalAppointment, ...rest}) => {
     return(
         <Modal visible={visible} transparent={true} animationType="fade">
             <ViewModalAppointment>
@@ -17,7 +17,7 @@ export const AppointmentModal = ({visible, setShowModalAppointment, ...rest}) =>
                         <TextAppointment>niccole.sarga@gmail.com</TextAppointment>
                     </BoxTextAppointment>
 
-                    <ButtonDefault>
+                    <ButtonDefault onPress={() => navigation.navigate("MedicalRecord")}>
                         <ButtonTitle>INSERIR PROTUÁRIO</ButtonTitle>
                     </ButtonDefault>
 

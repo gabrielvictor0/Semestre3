@@ -41,7 +41,7 @@ const lista = [
 ]
 
 
-export const Home = ({ }) => {
+export const Home = ({ navigation}) => {
     const [statusList, setStatusList] = useState("pendentes")
     const [showModalCancel, setShowModalCancel] = useState(false)
     const [showModalAppointment, setShowModalAppointment] = useState(false)
@@ -102,7 +102,8 @@ export const Home = ({ }) => {
 
             <AppointmentModal
             visible={showModalAppointment}
-            setShowModalAppointment={setShowModalAppointment}/>
+            setShowModalAppointment={setShowModalAppointment}
+            navigation={navigation}/>
             
             
         </Container>

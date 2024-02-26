@@ -4,7 +4,7 @@ export const Container = styled.SafeAreaView`
     flex: 1;
     align-items: center;
     position: fixed;
-    background-color: #FAFAFA;
+    background-color: white;
     
 `
 export const ContainerInputLogin = styled.View`

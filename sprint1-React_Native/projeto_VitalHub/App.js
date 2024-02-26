@@ -10,6 +10,7 @@ import { Register } from './src/components/screens/Register/Register';
 import { RedefinePassword } from './src/components/screens/RedefinePassword/RedefinePassword';
 import { Profile } from './src/components/screens/Profile/Profile';
 import { Home } from './src/components/screens/Home/Home';
+import { MedicalRecord } from './src/components/screens/MedicalRecord/MedicalRecord';
 
 //criar navegação entre telas
 const Stack = createNativeStackNavigator();
@@ -80,6 +81,11 @@ export default function App() {
           name='Home'
           component={Home}
           options={{ title: "Home" }} />
+
+        <Stack.Screen
+          name='MedicalRecord'
+          component={MedicalRecord}
+          options={{title: "MedicalRecord"}}/>
 
       </Stack.Navigator>
     </NavigationContainer>

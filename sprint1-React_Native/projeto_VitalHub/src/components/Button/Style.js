@@ -7,6 +7,7 @@ export const ButtonDefault = styled.TouchableOpacity`
     background-color: #496BBA;
     justify-content: center;
     margin-top: 30px;
+    align-self: center;
 `
 export const ButtonGoogle = styled(ButtonDefault)`
     border: 1px solid #496BBA;
