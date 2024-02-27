@@ -7,7 +7,9 @@ import { FlatList, TouchableOpacity } from "react-native"
 import { Cards } from "../../Cards/Cards"
 import image from "../../../assets/img/pinkman.jpg"
 import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { ContainerScheduleAppointment } from "./Style"
+import { ModalScheduleAppointment } from "../../ModalScheduleAppointment/ModalScheduleAppointment"
 
 const lista = [
     {
@@ -42,49 +44,54 @@ const lista = [
 export const HomePatient = () => {
     const [statusButton, setStatusButton] = useState("pendentes")
     const [modalSchedule, setModalSchedule] = useState(false)
-    return(
+    return (
         <Container>
             <HeaderDefault
-            source={require("../../../assets/img/walter.jpg")}
-            textName={"Walter"}/>
-            <CalendarHome/>
+                source={require("../../../assets/img/walter.jpg")}
+                textName={"Walter"} />
+            <CalendarHome />
             <ContainerButtonHome>
-                <ButtonHome 
-                textButton={"Pendentes"}
-                clickButton={statusButton == "pendentes"}
-                onPress={() => setStatusButton("pendentes")}
+                <ButtonHome
+                    textButton={"Pendentes"}
+                    clickButton={statusButton == "pendentes"}
+                    onPress={() => setStatusButton("pendentes")}
                 />
 
-                <ButtonHome 
-                textButton={"Realizadas"}
-                clickButton={statusButton == "realizadas"}
-                onPress={() => setStatusButton("realizadas")}
+                <ButtonHome
+                    textButton={"Realizadas"}
+                    clickButton={statusButton == "realizadas"}
+                    onPress={() => setStatusButton("realizadas")}
                 />
-                <ButtonHome 
-                textButton={"Canceladas"}
-                clickButton={statusButton == "canceladas"}
-                onPress={() => setStatusButton("canceladas")}
+                <ButtonHome
+                    textButton={"Canceladas"}
+                    clickButton={statusButton == "canceladas"}
+                    onPress={() => setStatusButton("canceladas")}
                 />
             </ContainerButtonHome>
             <FlatList
-            data={lista}
-            renderItem={({item}) => 
-                statusButton == item.status &&(
-                    <Cards
-                        Name={item.nome}
-                        Age={item.idade}
-                        Time={item.horarioConsulta}
-                        Type={item.tipoConsulta}
-                        Status={item.status}
-                        SourceImage={item.image}
-                    />
-                )}/>
+                data={lista}
+                renderItem={({ item }) =>
+                    statusButton == item.status && (
+                        <Cards
+                            Name={item.nome}
+                            Age={item.idade}
+                            Time={item.horarioConsulta}
+                            Type={item.tipoConsulta}
+                            Status={item.status}
+                            SourceImage={item.image}
+                        />
+                    )} />
 
-            <TouchableOpacity>
-                <ContainerScheduleAppointment>
-                    <MaterialIcons name="add" size={40} color="white"/>
+            <TouchableOpacity onPress={() => setModalSchedule(true)}>
+                <ContainerScheduleAppointment >
+                    <FontAwesome5 name="stethoscope" size={30} color="white" />
                 </ContainerScheduleAppointment>
             </TouchableOpacity>
+
+            <ModalScheduleAppointment
+            visible={modalSchedule}
+            setModalSchedule={setModalSchedule}/>
+
         </Container>
     )
 }
