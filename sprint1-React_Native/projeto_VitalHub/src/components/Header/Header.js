@@ -5,15 +5,15 @@ import { ContainerSafeArea } from "../../components/Header/Style"
 import { ContainerHeader, ContainerHeaderText } from '../Container/Style'
 import {MaterialIcons} from "@expo/vector-icons"
 
-export const HeaderDefault = ({ textName, source, subText }) => {
+export const HeaderDefault = ({ textName, source}) => {
     return (
 
         <ContainerSafeArea>
             <ContainerHearderGradient>
                 <ContainerHeader>
-                    <Image source={source} />
+                    <Image  style={{borderRadius: 5, width: 60, height: 60}} source={source} />
                     <ContainerHeaderText>
-                        <SubTextHeader>{subText}</SubTextHeader>
+                        <SubTextHeader>Bem vindo</SubTextHeader>
                         <TitleHeader>{textName}</TitleHeader>
                     </ContainerHeaderText>
                 <MaterialIcons style={{marginLeft: 145, marginTop: 17}} name='notifications' size={25} color="#fbfbfb"/>

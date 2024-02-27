@@ -11,6 +11,7 @@ import { RedefinePassword } from './src/components/screens/RedefinePassword/Rede
 import { Profile } from './src/components/screens/Profile/Profile';
 import { Home } from './src/components/screens/Home/Home';
 import { MedicalRecord } from './src/components/screens/MedicalRecord/MedicalRecord';
+import { HomePatient } from './src/components/screens/HomePatient/HomePatient';
 
 //criar navegação entre telas
 const Stack = createNativeStackNavigator();
@@ -86,6 +87,11 @@ export default function App() {
           name='MedicalRecord'
           component={MedicalRecord}
           options={{title: "MedicalRecord"}}/>
+
+        <Stack.Screen 
+          name='HomePatient'
+          component={HomePatient}
+          options={{title: "HomePatient"}}/>
 
       </Stack.Navigator>
     </NavigationContainer>

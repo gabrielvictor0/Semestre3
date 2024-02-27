@@ -9,6 +9,8 @@ import { FlatList } from "react-native";
 import image from "../../../assets/img/img_person.jpg"
 import { CancellationModal } from "../../CancellationModal/CancellationModal";
 import { AppointmentModal } from "../../AppointmentModal/AppointmentModal";
+import {FontAwesome6, FontAwesome5} from "@expo/vector-icons"
+import { OptionsHomeDoctor } from "./Style";
 
 const lista = [
     {
@@ -18,7 +20,8 @@ const lista = [
         horarioConsulta: "14:00",
         tipoConsulta: "Rotina",
         image: image,
-        status: "pendentes"
+        status: "pendentes",
+        typeUser: "paciente"
     },
     {
         id: "2",
@@ -27,7 +30,8 @@ const lista = [
         horarioConsulta: "15:00",
         tipoConsulta: "Urgencia",
         image: image,
-        status: "realizadas"
+        status: "realizadas",
+        typeUser: "paciente"
     },
     {
         id: "3",
@@ -36,21 +40,22 @@ const lista = [
         horarioConsulta: "15:00",
         tipoConsulta: "Urgencia",
         image: image,
-        status: "canceladas"
+        status: "canceladas",
+        typeUser: "paciente"
     }
 ]
 
 
-export const Home = ({ navigation}) => {
+export const Home = ({ navigation }) => {
     const [statusList, setStatusList] = useState("pendentes")
     const [showModalCancel, setShowModalCancel] = useState(false)
     const [showModalAppointment, setShowModalAppointment] = useState(false)
 
     return (
         <Container>
+
             <HeaderDefault
-                source={require("../../../assets/img/img_doctor.png")}
-                subText={"Bem vindo"}
+                source={require("../../../assets/img/pinkman.jpg")}
                 textName={"Dr. Claudio"} />
 
             <CalendarHome />
@@ -78,7 +83,7 @@ export const Home = ({ navigation}) => {
             <FlatList
                 data={lista}
                 renderItem={({ item }) =>
-                    statusList == item.status &&(
+                    statusList == item.status && (
 
                         <Cards
                             Name={item.nome}
@@ -87,25 +92,30 @@ export const Home = ({ navigation}) => {
                             Type={item.tipoConsulta}
                             SourceImage={item.image}
                             Status={item.status}
-                            onPressCancel={() => {setShowModalCancel(true)}}
-                            onPressAppointment={() => {setShowModalAppointment(true)}}
+                            onPressCancel={() => { setShowModalCancel(true) }}
+                            onPressAppointment={() => { setShowModalAppointment(true) }}
                         />
                     )
                 }
                 showsVerticalScrollIndicator={false}
             />
-            
+
             <CancellationModal
-            visible={showModalCancel}
-            setShowModalCancel={setShowModalCancel}
+                visible={showModalCancel}
+                setShowModalCancel={setShowModalCancel}
             />
 
             <AppointmentModal
-            visible={showModalAppointment}
-            setShowModalAppointment={setShowModalAppointment}
-            navigation={navigation}/>
-            
-            
+                visible={showModalAppointment}
+                setShowModalAppointment={setShowModalAppointment}
+                navigation={navigation} />
+
+            <OptionsHomeDoctor>
+                <FontAwesome6 name='calendar-check' size={25} color="#4E4B59" />
+                <FontAwesome5 name="hospital" size={25} color="#4E4B59"/>
+                <FontAwesome6 name='user-circle' size={25} color="#4E4B59" />
+            </OptionsHomeDoctor>
+
         </Container>
     )
 }

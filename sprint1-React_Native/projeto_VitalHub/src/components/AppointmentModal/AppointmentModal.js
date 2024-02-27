@@ -3,9 +3,9 @@ import { BoxTextAppointment, ButtonCancelAppointment, ContainerAppointment, Imag
 import { ButtonDefault } from "../Button/Style"
 import { ButtonTitle } from "../Title/Style"
 
-export const AppointmentModal = ({navigation, visible, setShowModalAppointment, ...rest}) => {
+export const AppointmentModal = ({navigation, visible,statusBarTranslucent, setShowModalAppointment, ...rest}) => {
     return(
-        <Modal visible={visible} transparent={true} animationType="fade">
+        <Modal visible={visible} transparent={true} statusBarTranslucent={true} animationType="fade">
             <ViewModalAppointment>
                 <ContainerAppointment>
                     <ImageAppointment source={require("../../assets/img/epico.jpg")}/>

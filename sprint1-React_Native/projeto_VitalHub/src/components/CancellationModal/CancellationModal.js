@@ -4,9 +4,9 @@ import { LinkModal } from "../Links/Style"
 import { ButtonTitle } from "../Title/Style"
 import { ButtonModalCancel, ContentModal, TextModal, TitleModal, ViewModal } from "./Style"
 
-export const CancellationModal = ({ visible, setShowModalCancel, ...rest }) => {
+export const CancellationModal = ({statusBarTranslucent, visible, setShowModalCancel, ...rest }) => {
     return (
-        <Modal {...rest} visible={visible} transparent={true} animationType="fade">
+        <Modal {...rest} visible={visible} statusBarTranslucent={true} transparent={true} animationType="fade">
             <ViewModal>
                 <ContentModal>
                     <TitleModal>

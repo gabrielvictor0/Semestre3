@@ -32,11 +32,11 @@ export const LabelInputMedicalRecord = styled.Text`
     font-size: 16px;
 
 `
-export const InputMedicalRecord = styled.TextInput.attrs(props => ({placeholderTextColor: `${props.editable == false ? "#34898F" : "#4E4B59"}`}))`
+export const InputMedicalRecord = styled.TextInput.attrs(props => ({placeholderTextColor: `${props.editable == true ? "#34898F" : "#4E4B59"}`}))`
     height: ${props => props.Height};
-    border: ${props => props.editable == false ? `1px solid #49B3BA` : "0px" };
+    border: ${props => props.editable == true ? `1px solid #49B3BA` : "0px" };
     width: 100%;
-    background-color: ${props => props.editable == false ? "white" : "#F5F3F3"};
+    background-color: ${props => props.editable == true ? "white" : "#F5F3F3"};
     border-radius: 5px;
     margin-top: 10px;   
     padding: ${props => props.Padding} ;

@@ -5,10 +5,10 @@ import { ButtonDefault } from "../../Button/Style"
 import { ButtonTitle } from "../../Title/Style"
 import { useState } from "react"
 
-export const MedicalRecord = ({ navigation, editable = false }) => {
-    const [edit, setEdit] = useState(false)
+export const MedicalRecord = ({ navigation, editable = true }) => {
+    const [edit, setEdit] = useState(true)
     return (
-        edit == false ?
+        edit == true ?
             <>
                 <ScrollView>
                     <Container>
@@ -47,7 +47,7 @@ export const MedicalRecord = ({ navigation, editable = false }) => {
                                 editable={editable} />
                         </BoxInputMedicalRecord>
 
-                        <ButtonDefault onPress={() => setEdit(true)}>
+                        <ButtonDefault onPress={() => setEdit(false)}>
                             <ButtonTitle>SALVAR</ButtonTitle>
                         </ButtonDefault>
 
@@ -57,8 +57,6 @@ export const MedicalRecord = ({ navigation, editable = false }) => {
                             <TextButtonCancel>Cancelar</TextButtonCancel>
                         </TouchableOpacity>
                     </Container>
-
-
                 </ScrollView>
             </> :
             <>
@@ -78,7 +76,7 @@ export const MedicalRecord = ({ navigation, editable = false }) => {
                                 placeholder={"Descrição"}
                                 Height={"121px"}
                                 Padding={"0px 0px 80px 10px"}
-                                editable={editable = true} />
+                                editable={editable = false} />
                         </BoxInputMedicalRecord>
 
                         <BoxInputMedicalRecord>
@@ -87,7 +85,7 @@ export const MedicalRecord = ({ navigation, editable = false }) => {
                                 placeholder={"Diagnóstico"}
                                 Height={"53px"}
                                 Padding={"0px 0px 0px 10px"}
-                                editable={editable = true} />
+                                editable={editable = false} />
                         </BoxInputMedicalRecord>
 
                         <BoxInputMedicalRecord>
@@ -96,14 +94,14 @@ export const MedicalRecord = ({ navigation, editable = false }) => {
                                 placeholder={"Prescrição médica"}
                                 Height={"121px"}
                                 Padding={"0px 0px 80px 10px"}
-                                editable={editable = true} />
+                                editable={editable = false} />
                         </BoxInputMedicalRecord>
-                        
-                        <ButtonDefault onPress={() => setEdit(false)}>
-                            <ButtonTitle>SALVAR</ButtonTitle>
-                        </ButtonDefault>
 
-                        <ButtonDefault>
+                        {/* <ButtonDefault onPress={() => setEdit(false)}>
+                            <ButtonTitle>SALVAR</ButtonTitle>
+                        </ButtonDefault> */}
+
+                        <ButtonDefault onPress={() => setEdit(true)}>
                             <ButtonTitle>EDITAR</ButtonTitle>
                         </ButtonDefault>
 
@@ -114,9 +112,6 @@ export const MedicalRecord = ({ navigation, editable = false }) => {
                         </TouchableOpacity>
 
                     </Container>
-
-
-
                 </ScrollView>
             </>
     )
