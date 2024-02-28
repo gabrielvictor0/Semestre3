@@ -12,6 +12,7 @@ export const BoxCard = styled.View`
     flex-direction: row;
     align-self: center;
     margin-top: 12px;
+    elevation: 3;
 `
 export const TextName = styled.Text`
     font-size: 16px;
@@ -37,7 +38,7 @@ export const TextType = styled.Text`
 `
 
 export const TextCancel = styled.Text`
-    color: ${(props) => props.Status == "pendentes" ? "#c81d25" : "#344f8f"} ; 
+    color: ${(props) => props.Status == "pendentes" || "agendadas" ? "#c81d25" : "#344f8f"} ; 
     font-size: 12px;
     font-family: "MontserratAlternates_500Medium";
 `

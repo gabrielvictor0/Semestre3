@@ -8,4 +8,5 @@ export const OptionsHomeDoctor = styled.View`
     justify-content: space-between;
     align-items: center;
     padding: 0px 42px 0px 42px;
+    margin-top: 30px;
 `

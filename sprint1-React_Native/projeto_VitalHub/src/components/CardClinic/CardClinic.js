@@ -3,9 +3,9 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 import { TouchableOpacity } from "react-native";
 
-export const CardClinic = ({ TextNameClinic, TextAddress, Day, Note, clickCard, setStatusCardClinic}) => {
+export const CardClinic = ({ TextNameClinic, TextAddress, Day, Note, clickCard}) => {
     return (
-        <TouchableOpacity>
+        
             <BoxCardClinic clickCard={clickCard}> 
 
                 <ContainerPrimary>
@@ -28,7 +28,7 @@ export const CardClinic = ({ TextNameClinic, TextAddress, Day, Note, clickCard, 
                 </ContainerSecond>
 
             </BoxCardClinic>
-        </TouchableOpacity>
+        
 
     )
 }

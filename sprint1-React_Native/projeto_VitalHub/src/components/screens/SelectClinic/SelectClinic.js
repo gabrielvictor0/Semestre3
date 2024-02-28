@@ -1,10 +1,10 @@
-import { FlatList, ScrollView, TouchableOpacity } from "react-native"
+import { FlatList, ScrollView, StatusBar, Text, TouchableOpacity } from "react-native"
 import { CardClinic } from "../../CardClinic/CardClinic"
 import { ContainerSelectClinic, TitleSelectClinic } from "./Style"
 import { ButtonDefault } from "../../Button/Style"
 import { ButtonTitle } from "../../Title/Style"
 import { LinkMedium, TtxCancel } from "../../Links/Style"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 const lista = [
     {
@@ -52,30 +52,31 @@ const lista = [
 ]
 
 export const SelectClinic = ({ navigation }) => {
-    const [statusCardClinic, setStatuCardClinic] = useState("")
+    const [statusCardClinic, setStatusCardClinic] = useState(null)
 
     return (
-        <ContainerSelectClinic>
+        <ContainerSelectClinic >
+            
             <TitleSelectClinic>Selecionar clínica</TitleSelectClinic>
 
             <FlatList
                 showsVerticalScrollIndicator={false}
                 data={lista}
                 renderItem={({ item }) =>
-                    <ScrollView >
+                    <TouchableOpacity onPress={() => setStatusCardClinic(item.id)}>
                         <CardClinic
                             TextNameClinic={item.nomeClinica}
                             TextAddress={item.endereco}
                             Day={item.dias}
                             Note={item.nota}
-                            clickCard={statusCardClinic == item.nomeClinica}
-                            onPress={() => setStatuCardClinic(item.nomeClinica)}
+                            clickCard={statusCardClinic == item.id}
+
                         />
-                    </ScrollView>
+                    </TouchableOpacity>
                 }
             />
 
-            <ButtonDefault>
+            <ButtonDefault onPress={() => navigation.navigate("SelectDoctor")}>
                 <ButtonTitle>CONTINUAR</ButtonTitle>
             </ButtonDefault>
 

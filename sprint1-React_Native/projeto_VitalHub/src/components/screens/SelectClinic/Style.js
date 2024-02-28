@@ -7,7 +7,7 @@ export const ContainerSelectClinic = styled.View`
     padding-bottom: 5%;
 `
 export const TitleSelectClinic = styled.Text`
-margin-top: 30%;
+    margin-top: 30%;
     font-size: 20px;
     font-family: "MontserratAlternates_600SemiBold";
     color: #33303E;

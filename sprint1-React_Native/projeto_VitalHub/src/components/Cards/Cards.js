@@ -1,9 +1,11 @@
 import { Image } from "react-native"
-import { BoxCard, BoxCardInformation, BoxCardText, BoxCardTime, BoxTime, ButtonCard, ImageCard, TextAge, TextCancel, TextName, TextTime, TextType } from "./Style"
+import { BoxCard, BoxCardInformation, BoxCardText, BoxCardTime, BoxTime, ButtonCard, ContainerCard, ImageCard, TextAge, TextCancel, TextName, TextTime, TextType } from "./Style"
 import { AntDesign } from "@expo/vector-icons"
 export const Cards = ({ SourceImage, Name, Age, Type, Time, Status, onPressCancel, onPressAppointment }) => {
 
     return (
+
+
         <BoxCard Status={Status}>
             <ImageCard source={SourceImage} />
             <BoxCardInformation>
@@ -30,7 +32,7 @@ export const Cards = ({ SourceImage, Name, Age, Type, Time, Status, onPressCance
                 Status == "canceladas" ? (
                     <>
                     </>
-                ) : Status == "pendentes" ? (
+                ) : Status == "pendentes" || Status == "agendadas" ? (
                     <ButtonCard onPress={onPressCancel} Status={Status}>
                         <TextCancel Status={Status}>Cancelar</TextCancel>
                     </ButtonCard>

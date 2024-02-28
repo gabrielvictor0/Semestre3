@@ -15,7 +15,17 @@ import { OptionsHomeDoctor } from "./Style";
 const lista = [
     {
         id: "1",
-        nome: "Nicole Sarga",
+        nome: "Gabriel Victor",
+        idade: "22",
+        horarioConsulta: "14:00",
+        tipoConsulta: "Rotina",
+        image: image,
+        status: "pendentes",
+        typeUser: "paciente"
+    },
+    {
+        id: "4",
+        nome: "Walter",
         idade: "22",
         horarioConsulta: "14:00",
         tipoConsulta: "Rotina",
@@ -84,7 +94,6 @@ export const Home = ({ navigation }) => {
                 data={lista}
                 renderItem={({ item }) =>
                     statusList == item.status && (
-
                         <Cards
                             Name={item.nome}
                             Age={item.idade}

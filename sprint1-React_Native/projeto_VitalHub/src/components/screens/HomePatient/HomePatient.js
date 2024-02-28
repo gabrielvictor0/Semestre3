@@ -18,7 +18,7 @@ const lista = [
         idade: "22",
         horarioConsulta: "14:00",
         tipoConsulta: "Rotina",
-        status: "pendentes",
+        status: "agendadas",
         image: image
     },
     {
@@ -41,8 +41,8 @@ const lista = [
     }
 ]
 
-export const HomePatient = ({navigation}) => {
-    const [statusButton, setStatusButton] = useState("pendentes")
+export const HomePatient = ({ navigation }) => {
+    const [statusButton, setStatusButton] = useState("agendadas")
     const [modalSchedule, setModalSchedule] = useState(false)
     return (
         <Container>
@@ -52,9 +52,9 @@ export const HomePatient = ({navigation}) => {
             <CalendarHome />
             <ContainerButtonHome>
                 <ButtonHome
-                    textButton={"Pendentes"}
-                    clickButton={statusButton == "pendentes"}
-                    onPress={() => setStatusButton("pendentes")}
+                    textButton={"Agendadas"}
+                    clickButton={statusButton == "agendadas"}
+                    onPress={() => setStatusButton("agendadas")}
                 />
 
                 <ButtonHome
@@ -72,14 +72,17 @@ export const HomePatient = ({navigation}) => {
                 data={lista}
                 renderItem={({ item }) =>
                     statusButton == item.status && (
-                        <Cards
-                            Name={item.nome}
-                            Age={item.idade}
-                            Time={item.horarioConsulta}
-                            Type={item.tipoConsulta}
-                            Status={item.status}
-                            SourceImage={item.image}
-                        />
+                        <TouchableOpacity>
+                            <Cards
+                                Name={item.nome}
+                                Age={item.idade}
+                                Time={item.horarioConsulta}
+                                Type={item.tipoConsulta}
+                                Status={item.status}
+                                SourceImage={item.image}
+                            />
+                        </TouchableOpacity>
+
                     )} />
 
             <TouchableOpacity onPress={() => setModalSchedule(true)}>
@@ -89,9 +92,9 @@ export const HomePatient = ({navigation}) => {
             </TouchableOpacity>
 
             <ModalScheduleAppointment
-            visible={modalSchedule}
-            setModalSchedule={setModalSchedule}
-            navigation={navigation}/>
+                visible={modalSchedule}
+                setModalSchedule={setModalSchedule}
+                navigation={navigation} />
 
         </Container>
     )
