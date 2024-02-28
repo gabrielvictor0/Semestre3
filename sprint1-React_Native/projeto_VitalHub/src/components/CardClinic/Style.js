@@ -7,13 +7,17 @@ export const BoxCardClinic = styled.View`
     background-color: white;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding-left: 18px;
     padding-right: 18px;
+    margin-top: 12px;
+    border: ${props => props.clickCard ? "2px solid #496BBA" :  "0px"};
 `
 export const NameClinic = styled.Text`
     font-family: "MontserratAlternates_600SemiBold";
     font-size: 16px;
     color: #33303E;
+    margin-bottom: 10px;
 `
 export const Address = styled.Text`
     font-family: "Quicksand_600SemiBold";
@@ -34,22 +38,24 @@ export const BoxDay = styled.View`
 export const TextDay = styled.Text` 
     font-family: "Quicksand_600SemiBold";
     font-size: 14px;
+    color: #49B3BA;
 `
 export const BoxNote = styled.View`
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid black;
-    width: 43%;
+    width: 40%;
+    margin-bottom: 10px;
 `
 
 export const TextNote = styled.Text` 
     font-family: "Quicksand_600SemiBold";
     font-size: 14px;
     color: #F9A620;
+    align-self: center;
 `
 export const ContainerPrimary = styled.View`
     
 `
 export const ContainerSecond = styled.View`
-
+    align-items: flex-end;
 `

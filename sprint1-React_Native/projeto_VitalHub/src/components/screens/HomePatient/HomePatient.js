@@ -41,7 +41,7 @@ const lista = [
     }
 ]
 
-export const HomePatient = () => {
+export const HomePatient = ({navigation}) => {
     const [statusButton, setStatusButton] = useState("pendentes")
     const [modalSchedule, setModalSchedule] = useState(false)
     return (
@@ -90,7 +90,8 @@ export const HomePatient = () => {
 
             <ModalScheduleAppointment
             visible={modalSchedule}
-            setModalSchedule={setModalSchedule}/>
+            setModalSchedule={setModalSchedule}
+            navigation={navigation}/>
 
         </Container>
     )

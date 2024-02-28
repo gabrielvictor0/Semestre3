@@ -6,7 +6,7 @@ import { TextCancel } from "../Cards/Style"
 import { TextBtnCancelAppointment } from "../AppointmentModal/Style"
 import { useState } from "react"
 
-export const ModalScheduleAppointment = ({ statusBarTranslucent, setModalSchedule, transparent, visible }) => {
+export const ModalScheduleAppointment = ({ navigation, setModalSchedule, transparent, visible }) => {
     const [statusLevelAppointment, setStatusLevelAppointment] = useState("Rotina")
     return (
         <Modal transparent={transparent} visible={visible} animationType="fade" statusBarTranslucent={true}>
@@ -49,7 +49,7 @@ export const ModalScheduleAppointment = ({ statusBarTranslucent, setModalSchedul
                         <InputSelect placeholder="Informe a localização" />
                     </BoxInputSchedule>
 
-                    <ButtonDefault>
+                    <ButtonDefault onPress={() => navigation.navigate("SelectClinic")}>
                         <ButtonTitle>CONTINUAR</ButtonTitle>
                     </ButtonDefault>
 

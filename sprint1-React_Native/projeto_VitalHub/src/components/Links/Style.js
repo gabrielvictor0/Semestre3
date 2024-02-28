@@ -13,3 +13,10 @@ export const LinkModal = styled(LinkMedium)`
     align-self: center;
     color: #344F8F;
 `
+export const TtxCancel = styled.Text`
+    color: #344F8F;
+    font-size: 14px;
+    font-family: "MontserratAlternates_600SemiBold";
+    text-decoration: underline;
+    margin-top: 30px;
+`
