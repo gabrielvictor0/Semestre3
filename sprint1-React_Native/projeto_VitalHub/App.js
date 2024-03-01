@@ -90,10 +90,10 @@ export default function App() {
           component={MedicalRecord}
           options={{title: "MedicalRecord"}}/>
 
-        <Stack.Screen 
+        {/* <Stack.Screen 
           name='HomePatient'
           component={HomePatient}
-          options={{title: "HomePatient"}}/>
+          options={{title: "HomePatient"}}/> */}
 
         <Stack.Screen
           name='SelectClinic'

@@ -80,7 +80,7 @@ export const SelectClinic = ({ navigation }) => {
                 <ButtonTitle>CONTINUAR</ButtonTitle>
             </ButtonDefault>
 
-            <TouchableOpacity onPress={() => navigation.navigate("HomePatient")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Home")}>
                 <TtxCancel>
                     Cancelar
                 </TtxCancel>

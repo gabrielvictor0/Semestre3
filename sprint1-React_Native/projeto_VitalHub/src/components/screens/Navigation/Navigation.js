@@ -20,9 +20,9 @@ export const Navigation = ({navigation}) => {
                 title="MedicalRecord"
                 onPress={() => navigation.navigate('MedicalRecord')}/>
             
-            <Button
+            {/* <Button
             title="HomePatient"
-            onPress={() => navigation.navigate("HomePatient")}/>
+            onPress={() => navigation.navigate("HomePatient")}/> */}
 
             <Button
             title="SelectClinic"
