@@ -25,8 +25,8 @@ LocaleConfig.locales['br'] = {
 
 LocaleConfig.defaultLocale = 'br';
 
-export default function CalendarSelectDate({selectedDate = '', handleSelectedDateFn = null}) {
-    const [selected, setSelected] = useState('');
+export default function CalendarSelectDate({ selectedDate = '', handleSelectedDateFn = null }) {
+    
     const currentDate = new Date().toUTCString();
 
     const renderHeader = (date) => {
@@ -48,13 +48,7 @@ export default function CalendarSelectDate({selectedDate = '', handleSelectedDat
                 calendarBackground: "transparent",
                 selectedDayBackgroundColor: "#60BFC5"
             }}
-            renderHeader={renderHeader}
-            onDayPress={day => {
-                setSelected(day.dateString);
-            }}
-            markedDates={{
-                [selected]: { selected: true, disableTouchEvent: true, selectedDotColor: '#60BFC5' }
-            }}
+            renderHeader={renderHeader} 
             dayComponent={({ date, state }) =>
                 <TouchableOpacity style={styles.button} onPress={() => {
                     if (state == 'disabled')
@@ -67,7 +61,7 @@ export default function CalendarSelectDate({selectedDate = '', handleSelectedDat
                     <DayContainer isSelected={date.dateString == selectedDate}>
                         <DayText isSelected={date.dateString == selectedDate} isDisabled={state == 'disabled'}>{date.day}</DayText>
                     </DayContainer>
-
+                        
                 </TouchableOpacity>
             }
         />
