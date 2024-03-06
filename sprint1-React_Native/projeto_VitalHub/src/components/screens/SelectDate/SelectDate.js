@@ -4,16 +4,38 @@ import { ButtonDefault } from "../../Button/Style"
 import CalendarSelectDate from "../../CalendarSelectDate/CalendarSelectDate"
 import { TtxCancel } from "../../Links/Style"
 import { ButtonTitle } from "../../Title/Style"
-import { BoxHour, ButtonSelectCalendar, ContainerSelecDate,LabelInputCalendar, TextHour, TitleCalendar } from "./Style"
-import { FlatList, TouchableOpacity } from "react-native"
+import { BoxHour, ButtonSelectCalendar, ContainerSelecDate, ContentBtn, LabelInputCalendar, TextHour, TitleCalendar, TxtBtn } from "./Style"
+import { FlatList, ScrollView, Text, TouchableOpacity } from "react-native"
+import { AntDesign } from '@expo/vector-icons';
+import { ButtonSelectHour } from "../../ButtonSelectHour/ButtonSelectHour"
+import { ContentHour } from "../../ButtonSelectHour/Style"
+
 
 export const SelectDate = () => {
     const [selectedDate, setSelectedDate] = useState();
     const [selectedTime, setSelectedTime] = useState();
+    const [statusSelect, setStatusSelect] = useState(false);
+    const [statusButton, setStatusButton] = useState("")
 
-    const DatasDisponiveis = {
-        horarios: "13:00"
-    }
+    const DatasDisponiveis = [
+        {
+            id: "1",
+            horario: "13:00"
+        },
+        {
+            id: "2",
+            horario: "14:00"
+        },
+        {
+            id: "3",
+            horario: "17:00"
+        },
+        {
+            id: "4",
+            horario: "20:00"
+        }
+
+    ]
 
     return (
         <ContainerSelecDate>
@@ -23,7 +45,43 @@ export const SelectDate = () => {
                 handleSelectedDateFn={setSelectedDate} />
             <LabelInputCalendar>Selecione um horário disponível </LabelInputCalendar>
 
-            
+            <ButtonSelectCalendar onPress={() => statusSelect == false ? setStatusSelect(true) : setStatusSelect(false)}>
+                <ContentBtn>
+                    {
+                        statusButton == "" ?
+                            <TxtBtn> Selecione um horário</TxtBtn>
+                            :
+                            <TxtBtn>{statusButton}</TxtBtn>
+                    }
+                    <AntDesign name="down" size={24} color="#34898F" style={{ alignSelf: "center" }} />
+                </ContentBtn>
+            </ButtonSelectCalendar>
+
+            {
+                statusSelect == true ?
+                    <ContentHour>
+
+                        <FlatList
+                            data={DatasDisponiveis}
+                            style={{ width: "100%" }}
+                            keyExtractor={(item) => item.id}
+                            showsVerticalScrollIndicator={false}
+                            renderItem={({ item }) =>
+                                statusSelect == true && (
+                                    <TouchableOpacity onPress={() => setStatusButton(item.horario) & setStatusSelect(false)}  >
+                                        <ButtonSelectHour
+                                            TxtHour={item.horario}
+                                        />
+                                    </TouchableOpacity>
+                                )}
+                        />
+                    </ContentHour>
+                    :
+                    null
+            }
+
+
+
 
             <ButtonDefault>
                 <ButtonTitle>CONFIRMAR</ButtonTitle>
