@@ -61,7 +61,7 @@ const lista = [
         idade: "22",
         horarioConsulta: "14:00",
         tipoConsulta: "Rotina",
-        status: "agendadas",
+        status: "pendentes",
         typeUser: "medico",
         image: image
     },
@@ -93,7 +93,6 @@ export const Home = ({ navigation }) => {
     const [showModalCancel, setShowModalCancel] = useState(false)
     const [showModalAppointment, setShowModalAppointment] = useState(false)
     const [userLogin, setUserLogin] = useState("paciente")
-    const [statusButton, setStatusButton] = useState("agendadas")
     const [modalSchedule, setModalSchedule] = useState(false)
 
     return (
@@ -106,35 +105,34 @@ export const Home = ({ navigation }) => {
                 <ContainerButtonHome>
                     <ButtonHome
                         textButton={"Agendadas"}
-                        clickButton={statusButton == "agendadas"}
-                        onPress={() => setStatusButton("agendadas")}
+                        clickButton={statusList == "pendentes"}
+                        onPress={() => setStatusList("pendentes")}
                     />
 
                     <ButtonHome
                         textButton={"Realizadas"}
-                        clickButton={statusButton == "realizadas"}
-                        onPress={() => setStatusButton("realizadas")}
+                        clickButton={statusList == "realizadas"}
+                        onPress={() => setStatusList("realizadas")}
                     />
                     <ButtonHome
                         textButton={"Canceladas"}
-                        clickButton={statusButton == "canceladas"}
-                        onPress={() => setStatusButton("canceladas")}
+                        clickButton={statusList == "canceladas"}
+                        onPress={() => setStatusList("canceladas")}
                     />
                 </ContainerButtonHome>
                 <FlatList
                     data={lista}
                     renderItem={({ item }) =>
-                        statusButton == item.status && item.typeUser == 'medico' && (
-                            <TouchableOpacity>
-                                <Cards
-                                    Name={item.nome}
-                                    Age={item.idade}
-                                    Time={item.horarioConsulta}
-                                    Type={item.tipoConsulta}
-                                    Status={item.status}
-                                    SourceImage={item.image}
-                                />
-                            </TouchableOpacity>
+                        statusList == item.status && item.typeUser == 'medico' && (
+                            <Cards
+                                Name={item.nome}
+                                Age={item.idade}
+                                Time={item.horarioConsulta}
+                                Type={item.tipoConsulta}
+                                Status={item.status}
+                                SourceImage={item.image}
+                                onPressCancel={() => { setShowModalCancel(true) }}
+                            />
 
                         )} />
 
@@ -148,6 +146,17 @@ export const Home = ({ navigation }) => {
                     visible={modalSchedule}
                     setModalSchedule={setModalSchedule}
                     navigation={navigation} />
+
+                <CancellationModal
+                    visible={showModalCancel}
+                    setShowModalCancel={setShowModalCancel}
+                />
+
+                <OptionsHomeDoctor>
+                    <FontAwesome6 name='calendar-check' size={25} color="#4E4B59" />
+
+                    <FontAwesome6 name='user-circle' size={25} color="#4E4B59" />
+                </OptionsHomeDoctor>
 
             </Container>
             :
@@ -183,16 +192,30 @@ export const Home = ({ navigation }) => {
                     data={lista}
                     renderItem={({ item }) =>
                         statusList == item.status && item.typeUser == "paciente" && (
-                            <Cards
-                                Name={item.nome}
-                                Age={item.idade}
-                                Time={item.horarioConsulta}
-                                Type={item.tipoConsulta}
-                                SourceImage={item.image}
-                                Status={item.status}
-                                onPressCancel={() => { setShowModalCancel(true) }}
-                                onPressAppointment={() => { setShowModalAppointment(true) }}
-                            />
+                            statusList == "pendentes" ?
+                                <TouchableOpacity onPress={() => setShowModalAppointment(true)}>
+                                    <Cards
+                                        Name={item.nome}
+                                        Age={item.idade}
+                                        Time={item.horarioConsulta}
+                                        Type={item.tipoConsulta}
+                                        SourceImage={item.image}
+                                        Status={item.status}
+                                        onPressCancel={() => { setShowModalCancel(true) }}
+                                        onPressAppointment={() => { setShowModalAppointment(true) }}
+                                    />
+                                </TouchableOpacity>
+                                :
+                                <Cards
+                                    Name={item.nome}
+                                    Age={item.idade}
+                                    Time={item.horarioConsulta}
+                                    Type={item.tipoConsulta}
+                                    SourceImage={item.image}
+                                    Status={item.status}
+                                    onPressCancel={() => { setShowModalCancel(true) }}
+                                    onPressAppointment={() => navigation.navigate("ViewMedicalRecord")}
+                                />
                         )
                     }
                     showsVerticalScrollIndicator={false}
@@ -210,7 +233,7 @@ export const Home = ({ navigation }) => {
 
                 <OptionsHomeDoctor>
                     <FontAwesome6 name='calendar-check' size={25} color="#4E4B59" />
-                    <FontAwesome5 name="hospital" size={25} color="#4E4B59" />
+
                     <FontAwesome6 name='user-circle' size={25} color="#4E4B59" />
                 </OptionsHomeDoctor>
 

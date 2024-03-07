@@ -21,7 +21,9 @@ export const ContentHour = styled.View`
     padding-top: 5px;
     align-items: center;
     border-radius: 3px;
-   
+    z-index: 99;
+    top: 83.2%;
+    position: absolute;
 `
 export const Hour = styled.Text`
     color: #34898F;

@@ -36,7 +36,6 @@ export const Navigation = ({navigation}) => {
             <Button
             title="SelecDate"
             onPress={() => navigation.navigate("SelectDate")}/>
-
         </View>
     )
 }

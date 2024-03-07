@@ -5,6 +5,7 @@ export const ContainerSelecDate = styled.View`
     justify-content: center;
     background-color: #FBFBFB;
     align-items: center;
+    padding-top: 10%;
 `
 export const TitleCalendar = styled.Text`
     color: #33303E;

@@ -5,10 +5,11 @@ import CalendarSelectDate from "../../CalendarSelectDate/CalendarSelectDate"
 import { TtxCancel } from "../../Links/Style"
 import { ButtonTitle } from "../../Title/Style"
 import { BoxHour, ButtonSelectCalendar, ContainerSelecDate, ContentBtn, LabelInputCalendar, TextHour, TitleCalendar, TxtBtn } from "./Style"
-import { FlatList, ScrollView, Text, TouchableOpacity } from "react-native"
+import { FlatList, ScrollView, Text, TouchableOpacity, VirtualizedList } from "react-native"
 import { AntDesign } from '@expo/vector-icons';
 import { ButtonSelectHour } from "../../ButtonSelectHour/ButtonSelectHour"
 import { ContentHour } from "../../ButtonSelectHour/Style"
+import { ModalCheckAppointment } from "../../ModalCheckAppointment/ModalCheckAppointment"
 
 
 export const SelectDate = () => {
@@ -16,6 +17,7 @@ export const SelectDate = () => {
     const [selectedTime, setSelectedTime] = useState();
     const [statusSelect, setStatusSelect] = useState(false);
     const [statusButton, setStatusButton] = useState("")
+    const [modalCheckAppointment, setModalCheckAppointment ] = useState(false)
 
     const DatasDisponiveis = [
         {
@@ -83,10 +85,15 @@ export const SelectDate = () => {
 
 
 
-            <ButtonDefault>
+            <ButtonDefault onPress={() => setModalCheckAppointment(true)}>
                 <ButtonTitle>CONFIRMAR</ButtonTitle>
             </ButtonDefault>
             <TtxCancel>Cancelar</TtxCancel>
+
+            <ModalCheckAppointment 
+            visible={modalCheckAppointment}
+            setModalCheckAppointment={setModalCheckAppointment}/>
+
         </ContainerSelecDate>
     )
 }
