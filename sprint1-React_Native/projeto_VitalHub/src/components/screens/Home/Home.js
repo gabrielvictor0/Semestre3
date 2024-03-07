@@ -13,6 +13,7 @@ import { FontAwesome6, FontAwesome5 } from "@expo/vector-icons"
 import { OptionsHomeDoctor } from "./Style";
 import { ContainerScheduleAppointment } from "../HomePatient/Style"
 import { ModalScheduleAppointment } from "../../ModalScheduleAppointment/ModalScheduleAppointment"
+import { ModalAppointmentLocation } from "../../ModalAppointmentLocation/ModalAppointmentLocation";
 
 const lista = [
     {
@@ -94,6 +95,7 @@ export const Home = ({ navigation }) => {
     const [showModalAppointment, setShowModalAppointment] = useState(false)
     const [userLogin, setUserLogin] = useState("paciente")
     const [modalSchedule, setModalSchedule] = useState(false)
+    const [modalAppointmentLocation, setModalAppointmentLocation] = useState(false)
 
     return (
         userLogin == "paciente" ?
@@ -124,15 +126,17 @@ export const Home = ({ navigation }) => {
                     data={lista}
                     renderItem={({ item }) =>
                         statusList == item.status && item.typeUser == 'medico' && (
-                            <Cards
-                                Name={item.nome}
-                                Age={item.idade}
-                                Time={item.horarioConsulta}
-                                Type={item.tipoConsulta}
-                                Status={item.status}
-                                SourceImage={item.image}
-                                onPressCancel={() => { setShowModalCancel(true) }}
-                            />
+                            <TouchableOpacity onPress={() => setModalAppointmentLocation(true)}>
+                                <Cards
+                                    Name={item.nome}
+                                    Age={item.idade}
+                                    Time={item.horarioConsulta}
+                                    Type={item.tipoConsulta}
+                                    Status={item.status}
+                                    SourceImage={item.image}
+                                    onPressCancel={() => { setShowModalCancel(true) }}
+                                />
+                            </TouchableOpacity>
 
                         )} />
 
@@ -141,6 +145,12 @@ export const Home = ({ navigation }) => {
                         <FontAwesome5 name="stethoscope" size={30} color="white" />
                     </ContainerScheduleAppointment>
                 </TouchableOpacity>
+
+                <ModalAppointmentLocation
+                    visible={modalAppointmentLocation}
+                    setModalAppointmentLocation={setModalAppointmentLocation}
+                    navigation={navigation}
+                />
 
                 <ModalScheduleAppointment
                     visible={modalSchedule}

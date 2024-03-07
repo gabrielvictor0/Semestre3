@@ -16,6 +16,7 @@ import { SelectClinic } from './src/components/screens/SelectClinic/SelectClinic
 import { SelectDoctor } from './src/components/screens/SelectDoctor/SelectDoctor';
 import { SelectDate } from './src/components/screens/SelectDate/SelectDate';
 import { ViewMedicalRecord } from './src/components/screens/ViewMedicalRecord/ViewMedicalRecord';
+import { AppointmentAddress } from './src/components/screens/AppointmentAddress/AppointmentAddress';
 
 //criar navegação entre telas
 const Stack = createNativeStackNavigator();
@@ -115,6 +116,10 @@ export default function App() {
           <Stack.Screen
             name='ViewMedicalRecord'
             component={ViewMedicalRecord}/>
+
+          <Stack.Screen 
+            name='AppointmentAddress'
+            component={AppointmentAddress}/>
           
       </Stack.Navigator>
     </NavigationContainer>
