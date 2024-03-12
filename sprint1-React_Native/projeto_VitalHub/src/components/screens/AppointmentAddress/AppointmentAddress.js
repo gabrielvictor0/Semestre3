@@ -12,19 +12,29 @@ export const AppointmentAddress = () => {
                 <ContentInputAddress Width={90}>
                     <LabelAddress>Endereço</LabelAddress>
                     <InputAddress
-                        Width={100} />
+                     Width={100} 
+                     editable={false}
+                     />
                 </ContentInputAddress>
 
                 <AlingAddress>
 
                     <ContentInputAddress Width={40}>
                         <LabelAddress>Número</LabelAddress>
-                        <InputAddress Width={100} />
+                        <InputAddress 
+                        Width={100} 
+                        editable={false}
+                        />
                     </ContentInputAddress>
-                    <ContentInputAddress Width={45}>
+
+                    <ContentInputAddress Width={55}>
                         <LabelAddress>Bairro</LabelAddress>
-                        <InputAddress Width={100} />
+                        <InputAddress 
+                        Width={100} 
+                        editable={false}
+                        />
                     </ContentInputAddress>
+
                 </AlingAddress>
             </ContentAddress>
         </Container>

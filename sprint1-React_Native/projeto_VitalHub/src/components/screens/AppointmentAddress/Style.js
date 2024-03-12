@@ -42,11 +42,13 @@ export const ContentInputAddress = styled.View`
     width: ${props =>`${props.Width}%`};
     justify-content: center;
     align-items: flex-start;
-    border: 1px solid black;
+    
 `
 export const AlingAddress = styled.View`
-    width: 100%;
+    width: 90%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 24px;
+    
 `

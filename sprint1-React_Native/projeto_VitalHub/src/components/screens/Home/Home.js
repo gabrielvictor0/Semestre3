@@ -126,6 +126,8 @@ export const Home = ({ navigation }) => {
                     data={lista}
                     renderItem={({ item }) =>
                         statusList == item.status && item.typeUser == 'medico' && (
+                            statusList == "pendentes"
+                            ?
                             <TouchableOpacity onPress={() => setModalAppointmentLocation(true)}>
                                 <Cards
                                     Name={item.nome}
@@ -137,6 +139,17 @@ export const Home = ({ navigation }) => {
                                     onPressCancel={() => { setShowModalCancel(true) }}
                                 />
                             </TouchableOpacity>
+                            : 
+                            <Cards
+                                    Name={item.nome}
+                                    Age={item.idade}
+                                    Time={item.horarioConsulta}
+                                    Type={item.tipoConsulta}
+                                    Status={item.status}
+                                    SourceImage={item.image}
+                                    onPressCancel={() => { setShowModalCancel(true) }}
+                                    onPressAppointment={() => navigation.navigate("Prescription")}
+                                />
 
                         )} />
 
