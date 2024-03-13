@@ -9,6 +9,9 @@ import { Image } from "react-native"
 
 export const Login = ({ navigation }) => {
 
+    async function Login() {
+        navigation.replace("Main")
+    }
 
     return (
         <Container>
@@ -26,7 +29,7 @@ export const Login = ({ navigation }) => {
             </ContainerInputLogin>
 
 
-            <ButtonDefault>
+            <ButtonDefault onPress={() => Login()}>
                 <ButtonTitle> ENTRAR </ButtonTitle>
             </ButtonDefault>
 

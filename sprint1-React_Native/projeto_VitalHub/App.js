@@ -18,6 +18,7 @@ import { SelectDate } from './src/components/screens/SelectDate/SelectDate';
 import { ViewMedicalRecord } from './src/components/screens/ViewMedicalRecord/ViewMedicalRecord';
 import { AppointmentAddress } from './src/components/screens/AppointmentAddress/AppointmentAddress';
 import { Prescription } from './src/components/screens/Prescription/Prescription';
+import { Main } from './src/components/screens/Main/Main';
 
 //criar navegação entre telas
 const Stack = createNativeStackNavigator();
@@ -40,8 +41,15 @@ export default function App() {
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
+        <Stack.Screen
+          name='Login'
+          component={Login}/>
 
         <Stack.Screen
+          name='Main'
+          component={Main}/>
+
+        {/* <Stack.Screen
           //nome da tela
           name='Navigation'
 
@@ -50,18 +58,13 @@ export default function App() {
 
           //titulo da tela
           options={{ title: "Navigation" }}
-        />
+        /> */}
 
         <Stack.Screen
           name='Profile'
           component={Profile}
           options={{ title: "Profile" }}
         />
-
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{ title: "Navigation" }} />
 
         <Stack.Screen
           name='RecoverPassword'
