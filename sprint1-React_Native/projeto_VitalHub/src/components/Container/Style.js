@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Container = styled.SafeAreaView`
     flex: 1;
     align-items: center;
-    position: fixed;
+    
     background-color: #fbfbfb;
     
 `
@@ -81,4 +81,9 @@ export const ContainerButtonHome = styled.View`
     height: auto;
     align-items: center;
     margin-bottom: 8px;
+`
+
+export const ContentMap = styled.View`
+width: 100%;
+height: 50%;
 `
