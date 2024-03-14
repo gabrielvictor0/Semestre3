@@ -175,12 +175,6 @@ export const Home = ({ navigation }) => {
                     setShowModalCancel={setShowModalCancel}
                 />
 
-                <OptionsHomeDoctor>
-                    <FontAwesome6 name='calendar-check' size={25} color="#4E4B59" />
-
-                    <FontAwesome6 name='user-circle' size={25} color="#4E4B59" />
-                </OptionsHomeDoctor>
-
             </Container>
             :
             < Container >
@@ -254,11 +248,6 @@ export const Home = ({ navigation }) => {
                     setShowModalAppointment={setShowModalAppointment}
                     navigation={navigation} />
 
-                <OptionsHomeDoctor>
-                    <FontAwesome6 name='calendar-check' size={25} color="#4E4B59" />
-
-                    <FontAwesome6 name='user-circle' size={25} color="#4E4B59" />
-                </OptionsHomeDoctor>
 
             </Container >
 

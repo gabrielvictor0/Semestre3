@@ -25,11 +25,13 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
 
-  const [] = useFonts({
+  const [fontsLoaded, fontsError] = useFonts({
     MontserratAlternates_600SemiBold, MontserratAlternates_500Medium,
     Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_400Regular
   })
-
+  if (!fontsLoaded && !fontsError) {
+    return null;
+  } else {
   return (
     //Navegacao
     //container
@@ -132,4 +134,4 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+}}

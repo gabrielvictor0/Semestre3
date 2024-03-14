@@ -1,10 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 const BottomTab = createBottomTabNavigator()
-
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons'
 import { ContentIcon, TextIcon } from './Style'
-import Profile from "../Profile/Profile"
-import Home from "../Home/Home"
+import { Home } from '../Home/Home'
+import { Profile } from '../Profile/Profile'
 
 export const Main = () => {
     return(
@@ -42,16 +41,13 @@ export const Main = () => {
       }
     }) }
     >
-        <BottomTab.Screen 
-        name="Home"
-        component={Home}
-      />
+      <BottomTab.Screen
+        name='Home'
+        component={Home}/>
 
-
-      <BottomTab.Screen 
-        name="Perfil"
-        component={Profile}
-      />
+      <BottomTab.Screen
+        name='Profile'
+        component={Profile}/>
     </BottomTab.Navigator>
     )
 }

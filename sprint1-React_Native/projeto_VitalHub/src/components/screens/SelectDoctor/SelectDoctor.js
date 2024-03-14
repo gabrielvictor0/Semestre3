@@ -54,7 +54,7 @@ export const SelectDoctor = ({navigation}) => {
                 }
             />
 
-            <ButtonDefault>
+            <ButtonDefault onPress={() => navigation.navigate('SelectDate')}>
                 <ButtonTitle>CONTINUAR</ButtonTitle>
             </ButtonDefault>
 

@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const ImagePrescription = styled.Image` 
     width: 100%;
-    flex: 1;
-;`
+`
 
 export const TitltePrescription =  styled.Text` 
     font-size: 20px;
@@ -13,11 +12,20 @@ export const TitltePrescription =  styled.Text`
 `
 
 export const InputPrescription = styled.TextInput`
-    width: ${props => `${props.Width }%` } ;
-    height:90%;
+    width: 100%  ;
+    height:${props => `${props.Height}px` };
     border:0px;
     background-color: #F5F3F3;
+    align-self:center;
+    margin-top: 10px;
 `
+export const BoxInputPrescription = styled.View`
+    width: 90%;
+    align-items: flex-start;
+    align-self: center;
+    margin-top: 20px;
+`
+
 export const SubTextPrescription = styled.Text`
     font-size: 14px;
     font-family: "Quicksand_500Medium";
