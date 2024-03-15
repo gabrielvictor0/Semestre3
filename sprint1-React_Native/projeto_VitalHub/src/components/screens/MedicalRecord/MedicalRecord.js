@@ -5,10 +5,12 @@ import { ButtonDefault } from "../../Button/Style"
 import { ButtonTitle } from "../../Title/Style"
 import { useState } from "react"
 
-export const MedicalRecord = ({ navigation, editable = true }) => {
+export const MedicalRecord = ({ navigation, editable   }) => {
     const [edit, setEdit] = useState(true)
+    const [statusSave, setStatusSave] = useState(true)
+
     return (
-        edit == true ?
+        edit == true && statusSave == true?
             <>
                 <ScrollView>
                     <Container>
@@ -47,14 +49,14 @@ export const MedicalRecord = ({ navigation, editable = true }) => {
                                 editable={editable} />
                         </BoxInputMedicalRecord>
 
-                        <ButtonDefault onPress={() => setEdit(false)}>
+                        <ButtonDefault onPress={() => {navigation.replace("Main"); setEdit(false); setStatusSave(false)}}>
                             <ButtonTitle>SALVAR</ButtonTitle>
                         </ButtonDefault>
 
                         <TouchableOpacity
                             onPress={() => navigation.navigate("Home")}
                             style={{ alignSelf: "center", marginTop: 30, marginBottom: 30 }}>
-                            <TextButtonCancel>Cancelar</TextButtonCancel>
+                            <TextButtonCancel>Voltar</TextButtonCancel>
                         </TouchableOpacity>
                     </Container>
                 </ScrollView>
@@ -101,14 +103,10 @@ export const MedicalRecord = ({ navigation, editable = true }) => {
                             <ButtonTitle>SALVAR</ButtonTitle>
                         </ButtonDefault> */}
 
-                        <ButtonDefault onPress={() => setEdit(true)}>
-                            <ButtonTitle>EDITAR</ButtonTitle>
-                        </ButtonDefault>
-
                         <TouchableOpacity
-                            onPress={() => navigation.navigate("Home")}
+                            onPress={() => navigation.replace("Main")}
                             style={{ alignSelf: "center", marginTop: 30, marginBottom: 30 }}>
-                            <TextButtonCancel>Cancelar</TextButtonCancel>
+                            <TextButtonCancel>Voltar</TextButtonCancel>
                         </TouchableOpacity>
 
                     </Container>

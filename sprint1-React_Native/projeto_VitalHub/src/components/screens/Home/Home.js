@@ -4,7 +4,7 @@ import { CalendarHome } from "../../CalendarHome/CalendarHome";
 import { Container, ContainerButtonHome } from "../../Container/Style";
 import { HeaderDefault } from "../../Header/Header";
 import { Cards } from "../../Cards/Cards";
-import { FlatList, TouchableOpacity } from "react-native";
+import { FlatList, TouchableHighlight, TouchableOpacity } from "react-native";
 
 import image from "../../../assets/img/img_person.jpg"
 import { CancellationModal } from "../../CancellationModal/CancellationModal";
@@ -100,9 +100,14 @@ export const Home = ({ navigation }) => {
     return (
         userLogin == "paciente" ?
             <Container>
-                <HeaderDefault
-                    source={require("../../../assets/img/walter.jpg")}
-                    textName={"Walter"} />
+                <TouchableOpacity 
+                style={{width: "100%"}}
+                onPress={() => navigation.navigate("Profile")}>
+                    <HeaderDefault
+                        source={require("../../../assets/img/walter.jpg")}
+                        textName={"Walter"} />
+                </TouchableOpacity>
+
                 <CalendarHome />
                 <ContainerButtonHome>
                     <ButtonHome
@@ -127,20 +132,20 @@ export const Home = ({ navigation }) => {
                     renderItem={({ item }) =>
                         statusList == item.status && item.typeUser == 'medico' && (
                             statusList == "pendentes"
-                            ?
-                            <TouchableOpacity onPress={() => setModalAppointmentLocation(true)}>
+                                ?
+                                <TouchableOpacity onPress={() => setModalAppointmentLocation(true)}>
+                                    <Cards
+                                        Name={item.nome}
+                                        Age={item.idade}
+                                        Time={item.horarioConsulta}
+                                        Type={item.tipoConsulta}
+                                        Status={item.status}
+                                        SourceImage={item.image}
+                                        onPressCancel={() => { setShowModalCancel(true) }}
+                                    />
+                                </TouchableOpacity>
+                                :
                                 <Cards
-                                    Name={item.nome}
-                                    Age={item.idade}
-                                    Time={item.horarioConsulta}
-                                    Type={item.tipoConsulta}
-                                    Status={item.status}
-                                    SourceImage={item.image}
-                                    onPressCancel={() => { setShowModalCancel(true) }}
-                                />
-                            </TouchableOpacity>
-                            : 
-                            <Cards
                                     Name={item.nome}
                                     Age={item.idade}
                                     Time={item.horarioConsulta}
@@ -178,10 +183,13 @@ export const Home = ({ navigation }) => {
             </Container>
             :
             < Container >
-
-                <HeaderDefault
-                    source={require("../../../assets/img/pinkman.jpg")}
-                    textName={"Dr. Claudio"} />
+                <TouchableOpacity
+                    onPress={() => navigation.navigate("Profile")}
+                    style={{ width: "100%" }}>
+                    <HeaderDefault
+                        source={require("../../../assets/img/pinkman.jpg")}
+                        textName={"Dr. Claudio"} />
+                </TouchableOpacity>
 
                 <CalendarHome />
                 <ContainerButtonHome>
