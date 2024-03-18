@@ -12,6 +12,7 @@ export const BoxCardClinic = styled.View`
     padding-right: 18px;
     margin-top: 12px;
     border: ${props => props.clickCard ? "2px solid #496BBA" : "0px"};
+    elevation: 3;
 `
 export const NameClinic = styled.Text`
     font-family: "MontserratAlternates_600SemiBold";

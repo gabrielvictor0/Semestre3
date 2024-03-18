@@ -20,6 +20,7 @@ export const InputPrescription = styled.TextInput`
     align-self:center;
     border-radius:5px ;
     margin-top: 10px;
+    padding: 8px;
 `
 export const BoxInputPrescription = styled.View`
     width: 90%;

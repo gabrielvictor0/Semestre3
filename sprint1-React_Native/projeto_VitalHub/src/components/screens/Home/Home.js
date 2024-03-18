@@ -37,6 +37,16 @@ const lista = [
         typeUser: "paciente"
     },
     {
+        id: "12",
+        nome: "Rogerio",
+        idade: "19",
+        horarioConsulta: "14:20",
+        tipoConsulta: "Rotina",
+        image: image,
+        status: "pendentes",
+        typeUser: "paciente"
+    },
+    {
         id: "2",
         nome: "Richard Kosta",
         idade: "28",
@@ -61,6 +71,26 @@ const lista = [
         nome: "Dr. Murilo",
         idade: "22",
         horarioConsulta: "14:00",
+        tipoConsulta: "Rotina",
+        status: "pendentes",
+        typeUser: "medico",
+        image: image
+    },
+    {
+        id: "8",
+        nome: "Dr. Cirilo",
+        idade: "46",
+        horarioConsulta: "16:00",
+        tipoConsulta: "Rotina",
+        status: "pendentes",
+        typeUser: "medico",
+        image: image
+    },
+    {
+        id: "9",
+        nome: "Dr. Mike",
+        idade: "33",
+        horarioConsulta: "15:30",
         tipoConsulta: "Rotina",
         status: "pendentes",
         typeUser: "medico",
@@ -129,11 +159,15 @@ export const Home = ({ navigation }) => {
                 </ContainerButtonHome>
                 <FlatList
                     data={lista}
+                    style={{width: "100%"}}
+                    contentContainerStyle={{paddingBottom: 10, paddingTop: 10}}
+                    showsVerticalScrollIndicator={false}
                     renderItem={({ item }) =>
                         statusList == item.status && item.typeUser == 'medico' && (
                             statusList == "pendentes"
                                 ?
-                                <TouchableOpacity onPress={() => setModalAppointmentLocation(true)}>
+                                <TouchableOpacity 
+                                onPress={() => setModalAppointmentLocation(true)}>
                                     <Cards
                                         Name={item.nome}
                                         Age={item.idade}
@@ -178,6 +212,7 @@ export const Home = ({ navigation }) => {
                 <CancellationModal
                     visible={showModalCancel}
                     setShowModalCancel={setShowModalCancel}
+                    navigation={navigation}
                 />
 
             </Container>
@@ -215,10 +250,14 @@ export const Home = ({ navigation }) => {
                 </ContainerButtonHome>
                 <FlatList
                     data={lista}
+                    style={{width: "100%"}}
+                    contentContainerStyle={{paddingBottom: 10, paddingTop: 10}}
+                    showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) =>
                         statusList == item.status && item.typeUser == "paciente" && (
                             statusList == "pendentes" ?
-                                <TouchableOpacity onPress={() => setShowModalAppointment(true)}>
+                                <TouchableOpacity 
+                                onPress={() => setShowModalAppointment(true)}>
                                     <Cards
                                         Name={item.nome}
                                         Age={item.idade}
@@ -249,6 +288,7 @@ export const Home = ({ navigation }) => {
                 <CancellationModal
                     visible={showModalCancel}
                     setShowModalCancel={setShowModalCancel}
+                    navigation={navigation}
                 />
 
                 <AppointmentModal

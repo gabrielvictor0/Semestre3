@@ -4,7 +4,7 @@ import { LinkModal } from "../Links/Style"
 import { ButtonTitle } from "../Title/Style"
 import { ButtonModalCancel, ContentModal, TextModal, TitleModal, ViewModal } from "./Style"
 
-export const CancellationModal = ({statusBarTranslucent,visible, setShowModalCancel, ...rest }) => {
+export const CancellationModal = ({ navigation, statusBarTranslucent, visible, setShowModalCancel, ...rest }) => {
     return (
         <Modal {...rest} visible={visible} statusBarTranslucent={true} transparent={true} animationType="fade">
             <ViewModal>
@@ -16,11 +16,12 @@ export const CancellationModal = ({statusBarTranslucent,visible, setShowModalCan
                         Ao cancelar essa consulta, abrirá uma possível disponibilidade no seu horário, deseja mesmo cancelar essa consulta?
                     </TextModal>
 
-                    <ButtonDefault>
+                    <ButtonDefault onPress={() => {setShowModalCancel(false) } }>
                         <ButtonTitle>
                             CONFIRMAR
                         </ButtonTitle>
                     </ButtonDefault>
+
                     <ButtonModalCancel onPress={() => setShowModalCancel(false)}>
                         <LinkModal >Cancelar</LinkModal>
                     </ButtonModalCancel>

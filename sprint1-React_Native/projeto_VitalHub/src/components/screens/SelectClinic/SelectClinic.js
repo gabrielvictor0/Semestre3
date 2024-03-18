@@ -62,8 +62,12 @@ export const SelectClinic = ({ navigation }) => {
             <FlatList
                 showsVerticalScrollIndicator={false}
                 data={lista}
+                style={{width: "100%", paddingBottom: 5}}
+                contentContainerStyle={{paddingBottom: 10, paddingTop: 10}}
                 renderItem={({ item }) =>
-                    <TouchableOpacity onPress={() => setStatusCardClinic(item.id)}>
+                    <TouchableOpacity 
+                    onPress={() => setStatusCardClinic(item.id)} 
+                    style={{alignItems: "center"}}>
                         <CardClinic
                             TextNameClinic={item.nomeClinica}
                             TextAddress={item.endereco}

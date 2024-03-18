@@ -5,6 +5,7 @@ export const ContainerSelectClinic = styled.View`
     flex: 1;
     align-items: center;
     padding-bottom: 5%;
+   
 `
 export const TitleSelectClinic = styled.Text`
     margin-top: 30%;

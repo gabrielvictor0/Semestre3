@@ -40,10 +40,12 @@ export const SelectDoctor = ({navigation}) => {
             <TitleSelectDoctor>Selecionar médico</TitleSelectDoctor>
 
             <FlatList
+                style={{width: "100%"}}
                 showsVerticalScrollIndicator={false}
                 data={lista}
                 renderItem={({ item }) =>
                     <TouchableOpacity 
+                    style={{alignItems: "center"}}
                     onPress={() => setStatusCardDoctor(item.id)}>
                         <CardDoctor
                             TxtNameDoctor={item.nameDoctor}

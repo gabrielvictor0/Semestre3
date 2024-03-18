@@ -12,12 +12,12 @@ import { ContentHour } from "../../ButtonSelectHour/Style"
 import { ModalCheckAppointment } from "../../ModalCheckAppointment/ModalCheckAppointment"
 
 
-export const SelectDate = () => {
+export const SelectDate = ({navigation}) => {
     const [selectedDate, setSelectedDate] = useState();
     const [selectedTime, setSelectedTime] = useState();
     const [statusSelect, setStatusSelect] = useState(false);
     const [statusButton, setStatusButton] = useState("")
-    const [modalCheckAppointment, setModalCheckAppointment ] = useState(false)
+    const [modalCheckAppointment, setModalCheckAppointment] = useState(false)
 
     const DatasDisponiveis = [
         {
@@ -88,11 +88,14 @@ export const SelectDate = () => {
             <ButtonDefault onPress={() => setModalCheckAppointment(true)}>
                 <ButtonTitle>CONFIRMAR</ButtonTitle>
             </ButtonDefault>
-            <TtxCancel>Cancelar</TtxCancel>
 
-            <ModalCheckAppointment 
-            visible={modalCheckAppointment}
-            setModalCheckAppointment={setModalCheckAppointment}/>
+            <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+                <TtxCancel>Cancelar</TtxCancel>
+            </TouchableOpacity>
+
+            <ModalCheckAppointment
+                visible={modalCheckAppointment}
+                setModalCheckAppointment={setModalCheckAppointment} />
 
         </ContainerSelecDate>
     )
