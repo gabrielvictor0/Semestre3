@@ -73,9 +73,16 @@ export const CameraPrescription = () => {
                 <Modal statusBarTranslucent={true} visible={cameraModal} style={{ backgroundColor: "green" }}>
                     <View style={{ width: "100%", height: "100%", alignItems: "center", justifyContent: "space-between", backgroundColor: "rgba(0, 0, 0, 0.7)" }}>
                         <Image style={{ width: "90%", height: "70%", alignSelf: "center", borderRadius: 5, marginTop: "25%" }} source={{ uri: photo }} />
-                        <View style={{width: "50%", flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 25}}>
-                            <MaterialIcons name="save-alt" size={44} color="white" style={{  }} />
-                            <Fontisto name="trash" size={27} color="white" style={{ }} />
+                        <View style={{ width: "50%", flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 25 }}>
+
+                            <TouchableOpacity onPress={() => SavePhoto()}>
+                                <MaterialIcons name="save-alt" size={44} color="white" style={{}} />
+                            </TouchableOpacity>
+
+                            <TouchableOpacity onPress={() => {ClearPhoto(); setCameraModal(false) } }>
+                                <Fontisto name="trash" size={27} color="red" style={{}} />
+                            </TouchableOpacity>
+
                         </View>
                     </View>
                 </Modal>

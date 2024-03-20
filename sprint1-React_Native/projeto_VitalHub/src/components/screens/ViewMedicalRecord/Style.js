@@ -4,7 +4,8 @@ export const InputViewMedicalRecord = styled.TextInput.attrs(({placeholderTextCo
     height: ${props => props.Height};
     border: 0px;
     width: 100%;
-    background-color: #F5F3F3;
+    border: ${props => props.statusEditable ? "2px solid #49B3BA" : "0px"};
+    background-color: ${props => props.statusEditable ? "white" : "#F5F3F3" } ;
     border-radius: 5px;
     margin-top: 10px;   
     padding: ${props => props.Padding} ;

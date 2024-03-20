@@ -1,10 +1,12 @@
 import { Container, ContainerFormProfile, ContainerInputSmall, ContainerScroll, ContainerSroll } from "../../Container/Style";
 import { BoxInput } from "../../BoxInput/BoxInput";
 import { Image } from "react-native";
-import {  ButtonProfile } from "../../Button/Style";
+import { ButtonProfile } from "../../Button/Style";
 import { ButtonTitle, SubTextProfile, Title } from "../../Title/Style";
+import { useState } from "react";
 
 export const Profile = () => {
+    const [statusEditable, setStatusEditable] = useState(false)
     return (
         <Container>
 
@@ -12,23 +14,28 @@ export const Profile = () => {
                 <ContainerFormProfile>
 
 
-                    <Image style={{alignSelf: "center", marginBottom: 20}} source={require('../../../assets/img/img_profile.png')} />
+                    <Image style={{ alignSelf: "center", marginBottom: 20 }} source={require('../../../assets/img/img_profile.png')} />
                     <Title>Richard Kosta</Title>
                     <SubTextProfile>richard.kosta@gmail.com</SubTextProfile>
 
                     <BoxInput
                         textLabel={"Data de nascimento: "}
                         placeholder={"dd/mm/aaaa"}
-                        keyType={"numeric"} />
+                        keyType={"numeric"}
+                        editable={statusEditable}
+                    />
 
                     <BoxInput
                         textLabel={"CPF: "}
                         placeholder={"xxx.xxx.xxx-xx"}
-                        keyType="numeric" />
+                        keyType="numeric"
+                        editable={statusEditable}
+                    />
 
                     <BoxInput
                         textLabel={"Endereço: "}
-                        placeholder={"Endereço.."} />
+                        placeholder={"Endereço.."}
+                        editable={statusEditable} />
 
                     <ContainerInputSmall>
 
@@ -36,22 +43,29 @@ export const Profile = () => {
                             textLabel={"Cep: "}
                             placeholder={"Cep.."}
                             fieldWidth={46}
-                            keyType="numeric" />
+                            keyType="numeric"
+                            editable={statusEditable} />
 
                         <BoxInput
                             textLabel={"Cidade: "}
                             placeholder={"Cidade.."}
                             fieldWidth={43}
+                            editable={statusEditable}
                         />
                     </ContainerInputSmall>
 
-                    <ButtonProfile>
-                        <ButtonTitle>SALVAR</ButtonTitle>
-                    </ButtonProfile>
+                    {
+                        statusEditable == false
+                            ?
+                            <ButtonProfile onPress={() => setStatusEditable(true)}>
+                                <ButtonTitle>EDITAR</ButtonTitle>
+                            </ButtonProfile>
+                            :
+                            <ButtonProfile onPress={() => setStatusEditable(false)}>
+                                <ButtonTitle>SALVAR</ButtonTitle>
+                            </ButtonProfile>
+                    }
 
-                    <ButtonProfile>
-                        <ButtonTitle>EDITAR</ButtonTitle>
-                    </ButtonProfile>
                 </ContainerFormProfile>
 
             </ContainerSroll>

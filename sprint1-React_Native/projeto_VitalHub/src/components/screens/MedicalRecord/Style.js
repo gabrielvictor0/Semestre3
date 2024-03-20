@@ -12,12 +12,12 @@ export const NameMedicalRecord = styled.Text`
 `
 export const AgeMedicalRecord = styled.Text` 
     font-size: 14px;
-    font-family: " Quicksand_500Medium";
+    font-family: "Quicksand_500Medium";
     color: #4E4B59;
 `
 export const EmailMedicalRecord = styled(AgeMedicalRecord)` 
     font-size: 14px;
-    font-family: " Quicksand_500Medium";
+    font-family: "Quicksand_500Medium";
     color: #5F5C6B;
 `
 export const BoxInformationMedicalRecord = styled.View`
