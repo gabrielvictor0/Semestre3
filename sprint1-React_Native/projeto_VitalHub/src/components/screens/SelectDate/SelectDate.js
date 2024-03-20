@@ -89,7 +89,7 @@ export const SelectDate = ({navigation}) => {
                 <ButtonTitle>CONFIRMAR</ButtonTitle>
             </ButtonDefault>
 
-            <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Main")}>
                 <TtxCancel>Cancelar</TtxCancel>
             </TouchableOpacity>
 

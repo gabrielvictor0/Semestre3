@@ -39,7 +39,7 @@ export const Prescription = ({navigation}) => {
                 </BoxInputPrescription>
 
                 <BoxBtnPrescription>
-                    <ButtonPhoto>
+                    <ButtonPhoto onPress={() => navigation.navigate("CameraPrescription")}>
                         <ContentPhoto>
                             <MaterialIcons name="add-a-photo" color={"white"} size={25} />
                             <TextBtnPhoto>Enviar</TextBtnPhoto>

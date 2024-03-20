@@ -19,6 +19,7 @@ import { ViewMedicalRecord } from './src/components/screens/ViewMedicalRecord/Vi
 import { AppointmentAddress } from './src/components/screens/AppointmentAddress/AppointmentAddress';
 import { Prescription } from './src/components/screens/Prescription/Prescription';
 import { Main } from './src/components/screens/Main/Main';
+import { CameraPrescription } from './src/components/Camera/Camera';
 
 //criar navegação entre telas
 const Stack = createNativeStackNavigator();
@@ -131,6 +132,10 @@ export default function App() {
             name='Prescription'
             component={Prescription}/>
           
+          <Stack.Screen
+            name='CameraPrescription'
+            component={CameraPrescription}/>
+
       </Stack.Navigator>
     </NavigationContainer>
   );
